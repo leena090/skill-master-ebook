@@ -150,7 +150,6 @@ html, body {
 .slide.density-b .slide-body {
     display: flex;
     gap: 48px;
-    flex: 1;
     align-items: flex-start;
 }
 
@@ -183,7 +182,6 @@ html, body {
 }
 
 .slide.density-c .slide-body {
-    flex: 1;
     font-size: 20px;
     line-height: 1.6;
     overflow: hidden;
@@ -205,7 +203,6 @@ html, body {
 }
 
 .slide.density-d .slide-body {
-    flex: 1;
     font-size: 17px;
     line-height: 1.5;
     overflow: hidden;
