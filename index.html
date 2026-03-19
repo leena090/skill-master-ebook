@@ -1,0 +1,2252 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920">
+    <title>Claude Code 스킬 마스터 — AI에게 업무를 가르치는 법</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="slides-container">
+        <!-- ============================================
+             CH0. 표지 + 인트로 (슬라이드 1~3)
+             ============================================ -->
+
+        <!-- 슬라이드 1: 표지 -->
+        <div id="slide-1" class="slide cover-slide active">
+            <div class="cover-content">
+                <div class="cover-label">NoMoreManual Ebook Series</div>
+                <h1 class="cover-title">Claude Code<br>스킬 마스터</h1>
+                <p class="cover-desc">AI에게 업무를 가르치면,<br>당신은 결과만 받습니다</p>
+                <div class="cover-badge">한 줄 입력 → 17개 파일 자동 생성의 비밀</div>
+                <p class="cover-author">노모어매뉴얼 | 2026</p>
+            </div>
+            <span class="slide-number">1</span>
+        </div>
+
+        <!-- 슬라이드 2: 이 책의 약속 -->
+        <div id="slide-2" class="slide density-b bg-cool">
+            <h2 class="slide-title">이 책의 약속 — 누구를 위한 책인가요?</h2>
+            <div class="slide-body">
+                <div class="slide-text">
+                    <div class="icon-grid" style="grid-template-columns: 1fr 1fr;">
+                        <div class="icon-card">
+                            <div class="card-icon">🎯</div>
+                            <div class="card-content">
+                                <h4>이런 분을 위해 썼습니다</h4>
+                                <p>Claude Code를 설치했지만<br>"이걸로 뭘 할 수 있지?" 막막한 분</p>
+                            </div>
+                        </div>
+                        <div class="icon-card">
+                            <div class="card-icon">⚡</div>
+                            <div class="card-content">
+                                <h4>코딩 몰라도 됩니다</h4>
+                                <p>이 책의 모든 것은<br><strong>한국어 명령</strong>으로 동작합니다</p>
+                            </div>
+                        </div>
+                        <div class="icon-card">
+                            <div class="card-icon">🏆</div>
+                            <div class="card-content">
+                                <h4>읽고 나면</h4>
+                                <p>나만의 자동화 스킬을<br>직접 만들고 진화시킬 수 있습니다</p>
+                            </div>
+                        </div>
+                        <div class="icon-card">
+                            <div class="card-icon">📖</div>
+                            <div class="card-content">
+                                <h4>읽는 데 약 30분</h4>
+                                <p>실전 사례 중심이라<br>지루할 틈이 없습니다</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span class="chapter-indicator">CH0 · 시작하기</span>
+            <span class="slide-number">2</span>
+        </div>
+
+        <!-- 슬라이드 3: 목차 -->
+        <div id="slide-3" class="slide density-b">
+            <h2 class="slide-title">목차</h2>
+            <div class="slide-body">
+                <div class="slide-text">
+                    <div class="icon-grid" style="grid-template-columns: 1fr 1fr;">
+                        <div class="icon-card">
+                            <div class="card-icon" style="background: var(--bg-cool); color: var(--primary);">1</div>
+                            <div class="card-content">
+                                <h4>스킬이 뭔가요?</h4>
+                                <p>AI에게 가르친 업무 절차 — 개념 이해</p>
+                            </div>
+                        </div>
+                        <div class="icon-card">
+                            <div class="card-icon" style="background: var(--bg-amber-tint); color: var(--accent);">2</div>
+                            <div class="card-content">
+                                <h4>실전 사례: 매물접수 스킬</h4>
+                                <p>한 줄 입력 → 7종 산출물 자동 생성 ⭐</p>
+                            </div>
+                        </div>
+                        <div class="icon-card">
+                            <div class="card-icon" style="background: var(--bg-cool); color: var(--primary);">3</div>
+                            <div class="card-content">
+                                <h4>처음부터 만들기</h4>
+                                <p>30분이면 나만의 첫 스킬 완성</p>
+                            </div>
+                        </div>
+                        <div class="icon-card">
+                            <div class="card-icon" style="background: var(--bg-amber-tint); color: var(--accent);">4</div>
+                            <div class="card-content">
+                                <h4>스킬 체이닝</h4>
+                                <p>여러 스킬을 연결해 파이프라인 구축</p>
+                            </div>
+                        </div>
+                        <div class="icon-card">
+                            <div class="card-icon" style="background: var(--bg-cool); color: var(--primary);">5</div>
+                            <div class="card-content">
+                                <h4>스킬 진화시키기</h4>
+                                <p>v1에서 v5로, 피드백과 메모리로 성장</p>
+                            </div>
+                        </div>
+                        <div class="icon-card">
+                            <div class="card-icon" style="background: var(--bg-amber-tint); color: var(--accent);">부록</div>
+                            <div class="card-content">
+                                <h4>이 전자책도 스킬로 만들었습니다</h4>
+                                <p>메타 가이드 — 전자책 만드는 법</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span class="chapter-indicator">CH0 · 목차</span>
+            <span class="slide-number">3</span>
+        </div>
+
+        <!-- ============================================
+             CH1. 스킬이 뭔가요? (슬라이드 4~8)
+             ============================================ -->
+
+        <!-- 슬라이드 4: 스킬이란? — 레시피 카드 비유 -->
+        <div id="slide-4" class="slide density-b bg-cool">
+            <h2 class="slide-title">"AI에게 가르친 업무 절차"</h2>
+            <div class="slide-body">
+                <div class="slide-text">
+                    <!-- 레시피 카드 비유로 스킬 개념을 쉽게 설명 -->
+                    <p style="font-size: 24px; margin-bottom: 24px; color: var(--text-medium);">
+                        요리 레시피를 떠올려 보세요.<br>
+                        재료를 넣고, 순서대로 따라하면 <strong class="highlight">누구나 같은 요리</strong>가 완성됩니다.
+                    </p>
+                    <div class="icon-grid" style="grid-template-columns: 1fr 1fr;">
+                        <!-- 레시피 비유 카드 -->
+                        <div class="icon-card">
+                            <div class="card-icon">🍳</div>
+                            <div class="card-content">
+                                <h4>요리 레시피</h4>
+                                <p>재료 준비 → 손질 → 볶기 → 양념 → 완성<br>
+                                <strong>순서만 따라하면 맛있는 요리!</strong></p>
+                            </div>
+                        </div>
+                        <!-- 스킬 비유 카드 -->
+                        <div class="icon-card">
+                            <div class="card-icon" style="background: var(--bg-amber-tint);">🤖</div>
+                            <div class="card-content">
+                                <h4>AI 스킬</h4>
+                                <p>정보 입력 → 조사 → 정리 → 문서 작성 → 완성<br>
+                                <strong>한 줄만 입력하면 자동으로 결과물!</strong></p>
+                            </div>
+                        </div>
+                        <!-- 핵심 정리 카드 -->
+                        <div class="icon-card">
+                            <div class="card-icon" style="background: var(--bg-amber-tint); color: var(--accent);">💡</div>
+                            <div class="card-content">
+                                <h4>쉽게 말하면</h4>
+                                <p>"이런 일이 들어오면, 이 순서대로 처리해줘"<br>
+                                라고 <strong class="highlight">AI에게 알려주는 설명서</strong>입니다</p>
+                            </div>
+                        </div>
+                        <!-- 코딩 불필요 카드 -->
+                        <div class="icon-card">
+                            <div class="card-icon" style="background: var(--bg-cool); color: var(--primary);">✅</div>
+                            <div class="card-content">
+                                <h4>코딩이 필요한가요?</h4>
+                                <p><strong class="highlight-gold">전혀 필요 없습니다!</strong><br>
+                                한국어로 순서를 적으면 그게 스킬이에요</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span class="chapter-indicator">CH1 · 스킬이 뭔가요?</span>
+            <span class="slide-number">4</span>
+        </div>
+
+        <!-- 슬라이드 5: Before/After — 스킬 없이 vs 있을 때 -->
+        <div id="slide-5" class="slide density-c">
+            <h2 class="slide-title">Before / After — 이렇게 달라집니다</h2>
+            <div class="slide-body">
+                <!-- VS 레이아웃으로 스킬 전/후 비교 -->
+                <div class="vs-layout">
+                    <!-- Before: 스킬 없이 수동 작업 -->
+                    <div class="vs-side before">
+                        <div class="vs-side-title" style="color: #EF4444;">😰 스킬 없이 — 매번 수동</div>
+                        <ul class="styled-list" style="font-size: 18px;">
+                            <li>매번 같은 작업을 처음부터 반복</li>
+                            <li>복사-붙여넣기의 무한 반복</li>
+                            <li>"이거 지난번에 어떻게 했더라?"</li>
+                            <li>실수할 때마다 다시 처음부터</li>
+                            <li>한 건 처리하는 데 <strong class="highlight-red">2~3시간</strong></li>
+                        </ul>
+                    </div>
+                    <!-- VS 구분선 -->
+                    <div class="vs-divider">VS</div>
+                    <!-- After: 스킬 사용 시 자동 처리 -->
+                    <div class="vs-side after">
+                        <div class="vs-side-title" style="color: var(--primary);">😊 스킬 있으면 — 한 줄이면 끝</div>
+                        <ul class="styled-list" style="font-size: 18px;">
+                            <li>한 번 가르치면 매번 <strong>동일 품질</strong></li>
+                            <li>입력 한 줄 → 결과물 자동 생성</li>
+                            <li>AI가 절차를 기억하고 알아서 실행</li>
+                            <li>실수 없이 일관된 결과</li>
+                            <li>한 건 처리하는 데 <strong class="highlight">2~3분</strong></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 핵심 요약 박스 -->
+                <div class="gold-box" style="text-align: center; margin-top: 16px; padding: 16px 28px;">
+                    <strong style="font-size: 22px;">핵심: "한 번 가르치면, 영원히 써먹는다"</strong>
+                </div>
+            </div>
+            <span class="chapter-indicator">CH1 · 스킬이 뭔가요?</span>
+            <span class="slide-number">5</span>
+        </div>
+
+        <!-- 슬라이드 6: 스킬의 구조 — 4단계 플로우차트 -->
+        <div id="slide-6" class="slide density-b">
+            <h2 class="slide-title">스킬의 구조 — 4가지 구성 요소</h2>
+            <div class="slide-body">
+                <div class="slide-text">
+                    <!-- 트리거→단계→에이전트→산출물 수평 플로우 -->
+                    <div class="flow-horizontal" style="justify-content: center; margin-bottom: 32px;">
+                        <div class="flow-step active">
+                            <div class="step-icon">🎯</div>
+                            <div class="step-label">트리거</div>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">
+                            <div class="step-icon">📋</div>
+                            <div class="step-label">단계</div>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">
+                            <div class="step-icon">🤖</div>
+                            <div class="step-label">에이전트</div>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step gold">
+                            <div class="step-icon">📦</div>
+                            <div class="step-label">산출물</div>
+                        </div>
+                    </div>
+                    <!-- 각 구성 요소 설명 카드 -->
+                    <div class="icon-grid" style="grid-template-columns: 1fr 1fr;">
+                        <div class="icon-card">
+                            <div class="card-icon" style="background: var(--primary); color: white;">1</div>
+                            <div class="card-content">
+                                <h4>트리거 — "시작 신호"</h4>
+                                <p>"매물접수"라고 입력하면 자동 시작!<br>
+                                <em style="color: var(--text-light);">비유: 가스 불을 켜는 것</em></p>
+                            </div>
+                        </div>
+                        <div class="icon-card">
+                            <div class="card-icon" style="background: var(--primary); color: white;">2</div>
+                            <div class="card-content">
+                                <h4>단계 — "순서"</h4>
+                                <p>조사 → 정리 → 작성 → 발행<br>
+                                <em style="color: var(--text-light);">비유: 레시피의 조리 순서</em></p>
+                            </div>
+                        </div>
+                        <div class="icon-card">
+                            <div class="card-icon" style="background: var(--primary); color: white;">3</div>
+                            <div class="card-content">
+                                <h4>에이전트 — "일꾼"</h4>
+                                <p>각 단계를 담당하는 AI 팀원<br>
+                                <em style="color: var(--text-light);">비유: 주방의 요리사들</em></p>
+                            </div>
+                        </div>
+                        <div class="icon-card">
+                            <div class="card-icon" style="background: var(--accent); color: white;">4</div>
+                            <div class="card-content">
+                                <h4>산출물 — "결과물"</h4>
+                                <p>엑셀, PPT, 블로그 등 완성품<br>
+                                <em style="color: var(--text-light);">비유: 완성된 요리!</em></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span class="chapter-indicator">CH1 · 스킬이 뭔가요?</span>
+            <span class="slide-number">6</span>
+        </div>
+
+        <!-- 슬라이드 7: 스킬의 종류 — 단일/멀티/체인 -->
+        <div id="slide-7" class="slide density-c">
+            <h2 class="slide-title">스킬의 종류 — 3가지 유형</h2>
+            <div class="slide-body">
+                <!-- 3-컬럼 아이콘 그리드로 스킬 종류 설명 -->
+                <div class="icon-grid" style="grid-template-columns: 1fr 1fr 1fr; gap: 28px;">
+                    <!-- 단일 스킬 -->
+                    <div class="glass-card" style="text-align: center; padding: 32px 24px;">
+                        <div style="font-size: 48px; margin-bottom: 16px;">🔧</div>
+                        <h3 style="font-size: 24px; font-weight: 700; color: var(--primary-dark); margin-bottom: 12px;">단일 스킬</h3>
+                        <p style="font-size: 18px; color: var(--text-medium); margin-bottom: 16px;">
+                            <strong>하나의 작업</strong>을 처리
+                        </p>
+                        <div class="info-box" style="text-align: left; font-size: 16px;">
+                            <strong>예시:</strong><br>
+                            "이 글을 요약해줘"<br>
+                            "이메일 초안 써줘"
+                        </div>
+                        <p style="margin-top: 12px; font-size: 15px; color: var(--text-light);">
+                            입력 1개 → 결과 1개
+                        </p>
+                    </div>
+                    <!-- 멀티 스킬 -->
+                    <div class="glass-card" style="text-align: center; padding: 32px 24px; border-color: var(--primary);">
+                        <div style="font-size: 48px; margin-bottom: 16px;">⚙️</div>
+                        <h3 style="font-size: 24px; font-weight: 700; color: var(--primary-dark); margin-bottom: 12px;">멀티 스킬</h3>
+                        <p style="font-size: 18px; color: var(--text-medium); margin-bottom: 16px;">
+                            <strong>여러 작업을 동시에</strong> 처리
+                        </p>
+                        <div class="tip-box" style="text-align: left; font-size: 16px;">
+                            <strong>예시:</strong><br>
+                            "시세 조사 + 블로그 작성"<br>
+                            "번역 + 요약 + 이메일 발송"
+                        </div>
+                        <p style="margin-top: 12px; font-size: 15px; color: var(--text-light);">
+                            입력 1개 → 결과 여러 개
+                        </p>
+                    </div>
+                    <!-- 체인 스킬 -->
+                    <div class="glass-card" style="text-align: center; padding: 32px 24px; border-color: var(--accent);">
+                        <div style="font-size: 48px; margin-bottom: 16px;">🔗</div>
+                        <h3 style="font-size: 24px; font-weight: 700; color: var(--accent-warm); margin-bottom: 12px;">체인 스킬</h3>
+                        <p style="font-size: 18px; color: var(--text-medium); margin-bottom: 16px;">
+                            <strong>결과물이 다음 스킬의 입력</strong>
+                        </p>
+                        <div class="warning-box" style="text-align: left; font-size: 16px;">
+                            <strong>예시:</strong><br>
+                            "매물 접수 → 블로그 → 인스타"<br>
+                            "조사 → 분석 → 보고서 → 발행"
+                        </div>
+                        <p style="margin-top: 12px; font-size: 15px; color: var(--text-light);">
+                            스킬이 스킬을 부르는 파이프라인
+                        </p>
+                    </div>
+                </div>
+                <!-- 핵심 메시지 -->
+                <div class="gold-box" style="text-align: center; margin-top: 20px; padding: 14px;">
+                    <strong>이 책에서 배울 것: 단일 → 멀티 → 체인으로 성장시키는 법</strong>
+                </div>
+            </div>
+            <span class="chapter-indicator">CH1 · 스킬이 뭔가요?</span>
+            <span class="slide-number">7</span>
+        </div>
+
+        <!-- 슬라이드 8: 여러분도 이미 스킬을 쓰고 있습니다 -->
+        <div id="slide-8" class="slide density-b bg-warm">
+            <h2 class="slide-title">여러분도 이미 "스킬"을 쓰고 있습니다</h2>
+            <div class="slide-body">
+                <div class="slide-text">
+                    <!-- 일상 속 스킬 비유 설명 -->
+                    <p style="font-size: 22px; margin-bottom: 24px; color: var(--text-medium);">
+                        사실 우리는 매일 "스킬"을 사용하고 있어요. 다만 그걸 스킬이라고 부르지 않았을 뿐이에요.
+                    </p>
+                    <div class="icon-grid" style="grid-template-columns: 1fr 1fr;">
+                        <!-- 요리 레시피 비유 -->
+                        <div class="icon-card">
+                            <div class="card-icon">📖</div>
+                            <div class="card-content">
+                                <h4>요리 레시피</h4>
+                                <p>"된장찌개 만들기" → 재료·순서·불 조절까지<br>
+                                누가 해도 비슷한 맛이 나죠?<br>
+                                <strong>그게 바로 스킬입니다</strong></p>
+                            </div>
+                        </div>
+                        <!-- 내비게이션 비유 -->
+                        <div class="icon-card">
+                            <div class="card-icon">🗺️</div>
+                            <div class="card-content">
+                                <h4>자동차 내비게이션</h4>
+                                <p>"목적지만 입력" → 경로·시간·우회까지 자동<br>
+                                직접 지도를 볼 필요가 없죠?<br>
+                                <strong>AI 스킬도 똑같습니다</strong></p>
+                            </div>
+                        </div>
+                        <!-- 은행 자동이체 비유 -->
+                        <div class="icon-card">
+                            <div class="card-icon">🏦</div>
+                            <div class="card-content">
+                                <h4>은행 자동이체</h4>
+                                <p>"한 번 설정" → 매달 알아서 이체<br>
+                                매번 은행에 갈 필요가 없죠?<br>
+                                <strong>스킬도 한 번 만들면 끝!</strong></p>
+                            </div>
+                        </div>
+                        <!-- 핵심 메시지 카드 -->
+                        <div class="icon-card" style="background: var(--bg-amber-tint); border-color: var(--accent);">
+                            <div class="card-icon" style="background: var(--accent); color: white;">🎯</div>
+                            <div class="card-content">
+                                <h4 style="color: var(--accent-warm);">차이점은 단 하나</h4>
+                                <p>지금까지는 <strong>사람이</strong> 절차를 실행했지만,<br>
+                                이제는 <strong class="highlight-gold">AI가 대신</strong> 실행합니다.<br>
+                                여러분은 결과만 받으세요!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span class="chapter-indicator">CH1 · 스킬이 뭔가요?</span>
+            <span class="slide-number">8</span>
+        </div>
+
+        <!-- ============================================
+             CH2. 실전 사례: 매물접수 스킬 (슬라이드 9~18)
+             ============================================ -->
+
+        <!-- 슬라이드 9: 챕터 오프너 — 빅 스탯 -->
+        <div id="slide-9" class="slide density-a bg-teal">
+            <h2 class="slide-title" style="color: var(--text-white);">한 줄 입력 →</h2>
+            <div class="big-number gold" style="font-size: 120px; margin: 16px 0;">17개</div>
+            <p class="slide-subtitle" style="color: rgba(255,255,255,0.9); font-size: 32px;">
+                파일이 자동으로 생성됩니다
+            </p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 22px; margin-top: 24px;">
+                실제로 동작하는 매물접수 스킬을 함께 살펴볼까요?
+            </p>
+            <span class="chapter-indicator" style="color: var(--accent-light);">CH2 · 실전 사례</span>
+            <span class="slide-number" style="color: rgba(255,255,255,0.5);">9</span>
+        </div>
+
+        <!-- 슬라이드 10: 4명의 에이전트 팀 출동 -->
+        <div id="slide-10" class="slide density-b">
+            <h2 class="slide-title">4명의 AI 에이전트 팀이 출동합니다</h2>
+            <div class="slide-body">
+                <div class="slide-text">
+                    <!-- 에이전트 팀 개념 설명 -->
+                    <p style="font-size: 21px; margin-bottom: 20px; color: var(--text-medium);">
+                        한 줄을 입력하면, <strong>4명의 전문가 AI</strong>가 각자 역할을 나눠 동시에 일합니다.<br>
+                        마치 회사에서 팀 프로젝트를 하듯이요.
+                    </p>
+                    <!-- 4명 에이전트 카드 -->
+                    <div class="icon-grid" style="grid-template-columns: 1fr 1fr;">
+                        <div class="icon-card" style="border-left: 4px solid #3B82F6;">
+                            <div class="card-icon" style="background: #EFF6FF; font-size: 24px;">
+                                <span class="agent-badge blue">🔵</span>
+                            </div>
+                            <div class="card-content">
+                                <h4>시세 조사관</h4>
+                                <p>아파트 시세, 실거래가, 주변 단지 비교<br>
+                                <em style="color: var(--text-light);">"이 가격이 비싼 건지, 싼 건지 알려드려요"</em></p>
+                            </div>
+                        </div>
+                        <div class="icon-card" style="border-left: 4px solid #10B981;">
+                            <div class="card-icon" style="background: #ECFDF5; font-size: 24px;">
+                                <span class="agent-badge green">🟢</span>
+                            </div>
+                            <div class="card-content">
+                                <h4>매물 카피라이터</h4>
+                                <p>네이버, 인스타, 카톡용 매물 소개글 작성<br>
+                                <em style="color: var(--text-light);">"3가지 채널에 맞는 글을 써드려요"</em></p>
+                            </div>
+                        </div>
+                        <div class="icon-card" style="border-left: 4px solid #F97316;">
+                            <div class="card-icon" style="background: #FFF7ED; font-size: 24px;">
+                                <span class="agent-badge orange">🟠</span>
+                            </div>
+                            <div class="card-content">
+                                <h4>지역 분석가</h4>
+                                <p>교통, 학군, 편의시설, 개발 호재 분석<br>
+                                <em style="color: var(--text-light);">"이 동네의 미래 가치를 평가해요"</em></p>
+                            </div>
+                        </div>
+                        <div class="icon-card" style="border-left: 4px solid #EF4444;">
+                            <div class="card-icon" style="background: #FEF2F2; font-size: 24px;">
+                                <span class="agent-badge red">🔴</span>
+                            </div>
+                            <div class="card-content">
+                                <h4>블로그 발행자</h4>
+                                <p>SEO 블로그 작성 → 워드프레스 자동 업로드<br>
+                                <em style="color: var(--text-light);">"검색에 잘 잡히는 글을 만들어요"</em></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span class="chapter-indicator">CH2 · 실전 사례</span>
+            <span class="slide-number">10</span>
+        </div>
+
+        <!-- 슬라이드 11: Step 0 — 자연어 → 구조화 데이터 -->
+        <div id="slide-11" class="slide density-b">
+            <h2 class="slide-title">Step 0: 말하듯 입력하면 AI가 정리합니다</h2>
+            <div class="slide-body">
+                <div class="slide-text" style="display: flex; gap: 32px; align-items: flex-start;">
+                    <!-- 입력 예시 (자연어) -->
+                    <div style="flex: 1;">
+                        <h3 class="sub-title" style="margin-top: 0;">여러분이 입력하는 것</h3>
+                        <pre style="font-size: 17px; padding: 20px;"><code>매물접수 힐스테이트영통 전세
+5억8천 84㎡ 남향 12층
+즉시입주 올수리완료</code></pre>
+                        <div class="info-box" style="margin-top: 16px;">
+                            <p style="font-size: 17px;">그냥 <strong>아는 대로, 편하게</strong> 적으면 됩니다.<br>
+                            형식이 틀려도, 순서가 달라도 AI가 알아서 이해해요.</p>
+                        </div>
+                    </div>
+                    <!-- 화살표 -->
+                    <div style="display: flex; align-items: center; padding-top: 60px;">
+                        <span style="font-size: 48px; color: var(--primary);">→</span>
+                    </div>
+                    <!-- 파싱 결과 (구조화된 JSON) -->
+                    <div style="flex: 1;">
+                        <h3 class="sub-title" style="margin-top: 0;">AI가 정리한 결과</h3>
+                        <pre style="font-size: 15px; padding: 20px;"><code>{
+  "단지명": "힐스테이트영통",
+  "거래유형": "전세",
+  "가격": "5억 8,000만원",
+  "면적": "84㎡ (25평)",
+  "층수": "12층",
+  "방향": "남향",
+  "입주일": "즉시입주",
+  "특이사항": "올수리완료"
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+            <span class="chapter-indicator">CH2 · 실전 사례</span>
+            <span class="slide-number">11</span>
+        </div>
+
+        <!-- 슬라이드 12: 엑셀·PPT 자동 생성 -->
+        <div id="slide-12" class="slide density-b">
+            <h2 class="slide-title">자동으로 엑셀 시세표와 PPT 보고서가 만들어집니다</h2>
+            <div class="slide-body">
+                <div class="slide-text" style="display: flex; gap: 32px;">
+                    <!-- 엑셀 설명 -->
+                    <div style="flex: 1;">
+                        <h3 class="sub-title" style="margin-top: 0;">📊 엑셀 시세표</h3>
+                        <div class="screenshot-placeholder">
+                            <div class="ph-icon">📸</div>
+                            <div class="ph-text">스크린샷: 엑셀 시세 분석표 (추후 삽입)</div>
+                        </div>
+                        <ul class="check-list" style="margin-top: 16px; font-size: 17px;">
+                            <li>매물 핵심 정보 한눈에 정리</li>
+                            <li>KB시세 vs 호가 비교 차트</li>
+                            <li>인근 단지 가격 비교</li>
+                            <li>인사이트 점수 레이더 차트</li>
+                        </ul>
+                    </div>
+                    <!-- PPT 설명 -->
+                    <div style="flex: 1;">
+                        <h3 class="sub-title" style="margin-top: 0;">📑 VIP 보고서 PPT</h3>
+                        <div class="screenshot-placeholder">
+                            <div class="ph-icon">📸</div>
+                            <div class="ph-text">스크린샷: PPT 보고서 슬라이드 (추후 삽입)</div>
+                        </div>
+                        <ul class="check-list" style="margin-top: 16px; font-size: 17px;">
+                            <li>고객 대면용 10장 슬라이드</li>
+                            <li>시세 막대 차트 자동 생성</li>
+                            <li>전세가율 도넛 차트</li>
+                            <li>개발 호재 타임라인</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <span class="chapter-indicator">CH2 · 실전 사례</span>
+            <span class="slide-number">12</span>
+        </div>
+
+        <!-- 슬라이드 13: 브랜드 컬러 자동 적용 + 카드뉴스 -->
+        <div id="slide-13" class="slide density-c">
+            <h2 class="slide-title">브랜드 컬러 자동 적용 + 인스타 카드뉴스</h2>
+            <div class="slide-body">
+                <div style="display: flex; gap: 32px;">
+                    <!-- 브랜드 컬러 설명 -->
+                    <div style="flex: 1;">
+                        <h3 class="sub-title" style="margin-top: 0;">🎨 브랜드 컬러 시스템</h3>
+                        <p style="font-size: 18px; color: var(--text-medium); margin-bottom: 16px;">
+                            한 번 설정하면, 모든 산출물에 <strong>동일한 브랜드 색상</strong>이 자동 적용됩니다.
+                        </p>
+                        <!-- 컬러 테이블 -->
+                        <table class="compact-table" style="margin-bottom: 16px;">
+                            <thead>
+                                <tr>
+                                    <th>용도</th>
+                                    <th>색상</th>
+                                    <th>적용 위치</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>메인 컬러</td>
+                                    <td><span style="display:inline-block;width:16px;height:16px;background:#1B2A4A;border-radius:4px;vertical-align:middle;"></span> 네이비</td>
+                                    <td>제목, 헤더, 배경</td>
+                                </tr>
+                                <tr>
+                                    <td>강조 컬러</td>
+                                    <td><span style="display:inline-block;width:16px;height:16px;background:#C8A96E;border-radius:4px;vertical-align:middle;"></span> 골드</td>
+                                    <td>가격, 점수, CTA</td>
+                                </tr>
+                                <tr>
+                                    <td>서브 컬러</td>
+                                    <td><span style="display:inline-block;width:16px;height:16px;background:#4ECDC4;border-radius:4px;vertical-align:middle;"></span> 민트</td>
+                                    <td>장점, 아이콘</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- 카드뉴스 스크린샷 -->
+                    <div style="flex: 1;">
+                        <h3 class="sub-title" style="margin-top: 0;">📸 인스타 카드뉴스 5장</h3>
+                        <div class="screenshot-placeholder" style="padding: 40px 20px;">
+                            <div class="ph-icon">📸</div>
+                            <div class="ph-text">스크린샷: 인스타 카드뉴스 5장 미리보기 (추후 삽입)</div>
+                        </div>
+                        <div class="tip-box" style="margin-top: 16px; font-size: 16px;">
+                            <strong>자동 생성 항목:</strong> 표지 → 스펙 → 시세 → 입지 → CTA<br>
+                            모바일 최적화 1080×1080px
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span class="chapter-indicator">CH2 · 실전 사례</span>
+            <span class="slide-number">13</span>
+        </div>
+
+        <!-- 슬라이드 14: 인사이트 스코어 A등급 -->
+        <div id="slide-14" class="slide density-b bg-cool">
+            <h2 class="slide-title">매물 인사이트 스코어 — A등급 (82/100)</h2>
+            <div class="slide-body">
+                <div class="slide-text">
+                    <!-- 인사이트 점수 설명 -->
+                    <p style="font-size: 21px; margin-bottom: 20px; color: var(--text-medium);">
+                        AI가 7가지 항목을 분석해 <strong class="highlight">종합 점수</strong>를 매깁니다.<br>
+                        이 매물은 <strong class="highlight-gold">82점, A등급</strong> — "매수 추천" 수준이에요.
+                    </p>
+                    <!-- 스탯 그리드 — 핵심 지표 4개 -->
+                    <div class="stat-grid" style="grid-template-columns: repeat(4, 1fr); margin-bottom: 24px;">
+                        <div class="stat-card">
+                            <div class="stat-number">82</div>
+                            <div class="stat-label">종합 점수 (100점 만점)</div>
+                        </div>
+                        <div class="stat-card gold">
+                            <div class="stat-number">A</div>
+                            <div class="stat-label">등급 (매수 추천)</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">-1.7%</div>
+                            <div class="stat-label">시세 대비 호가</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">49.6%</div>
+                            <div class="stat-label">전세가율 (매우 안전)</div>
+                        </div>
+                    </div>
+                    <!-- 7가지 평가 항목 -->
+                    <div class="info-box" style="font-size: 17px;">
+                        <strong style="font-size: 19px;">평가 7개 항목:</strong><br>
+                        시세 대비 가격(25점) · 전세 안전성(20점) · 교통 입지(15점) · 학군(15점) · 개발 호재(10점) · 단지 규모(10점) · 컨디션(5점)
+                    </div>
+                </div>
+            </div>
+            <span class="chapter-indicator">CH2 · 실전 사례</span>
+            <span class="slide-number">14</span>
+        </div>
+
+        <!-- 슬라이드 15: 산출물 총정리 — 7종 한눈에 -->
+        <div id="slide-15" class="slide density-c">
+            <h2 class="slide-title">산출물 총정리 — 7종이 한 번에 만들어집니다</h2>
+            <div class="slide-body">
+                <!-- 7종 산출물 비교 테이블 -->
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 40px;">#</th>
+                            <th style="width: 180px;">산출물</th>
+                            <th>설명</th>
+                            <th style="width: 160px;">용도</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>1</strong></td>
+                            <td>📊 엑셀 시세표</td>
+                            <td>KB시세, 실거래가, 인근 비교, 차트 3종 포함</td>
+                            <td>내부 분석용</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2</strong></td>
+                            <td>📑 PPT 보고서</td>
+                            <td>10장 슬라이드, 차트 4종, 게이지 바 포함</td>
+                            <td>고객 대면 보고</td>
+                        </tr>
+                        <tr>
+                            <td><strong>3</strong></td>
+                            <td>📝 SEO 블로그</td>
+                            <td>2,500자+, 강조 필기, FAQ 스키마 포함</td>
+                            <td>검색 노출</td>
+                        </tr>
+                        <tr>
+                            <td><strong>4</strong></td>
+                            <td>📸 카드뉴스 5장</td>
+                            <td>1080×1080px, 브랜드 컬러, 모바일 최적화</td>
+                            <td>인스타그램</td>
+                        </tr>
+                        <tr>
+                            <td><strong>5</strong></td>
+                            <td>📊 인사이트 점수</td>
+                            <td>7개 항목 분석, 종합 등급, 매수/매도 관점</td>
+                            <td>의사결정 근거</td>
+                        </tr>
+                        <tr>
+                            <td><strong>6</strong></td>
+                            <td>🌐 워드프레스 발행</td>
+                            <td>블로그 글 자동 업로드 (draft 상태)</td>
+                            <td>웹사이트 게시</td>
+                        </tr>
+                        <tr>
+                            <td><strong>7</strong></td>
+                            <td>📱 인스타 게시</td>
+                            <td>카드뉴스 + 캡션 + 해시태그 자동 게시</td>
+                            <td>SNS 마케팅</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- 시간 절약 강조 -->
+                <div class="gold-box" style="text-align: center; margin-top: 20px; display: flex; justify-content: center; gap: 60px; align-items: center;">
+                    <div>
+                        <span style="font-size: 16px; color: var(--text-light);">수작업 예상</span><br>
+                        <span class="highlight-red" style="font-size: 28px;">5시간</span>
+                    </div>
+                    <div style="font-size: 32px; color: var(--accent);">→</div>
+                    <div>
+                        <span style="font-size: 16px; color: var(--text-light);">AI 스킬</span><br>
+                        <span class="highlight" style="font-size: 28px;">2분</span>
+                    </div>
+                    <div style="font-size: 16px; color: var(--accent-warm); font-weight: 700;">
+                        99.3% 시간 절약
+                    </div>
+                </div>
+            </div>
+            <span class="chapter-indicator">CH2 · 실전 사례</span>
+            <span class="slide-number">15</span>
+        </div>
+
+        <!-- 슬라이드 16: 워드프레스 + 인스타 자동 발행 -->
+        <div id="slide-16" class="slide density-b">
+            <h2 class="slide-title">워드프레스 + 인스타그램 자동 발행</h2>
+            <div class="slide-body">
+                <div class="slide-text" style="display: flex; gap: 32px;">
+                    <!-- 워드프레스 설명 -->
+                    <div style="flex: 1;">
+                        <h3 class="sub-title" style="margin-top: 0;">🌐 워드프레스 자동 업로드</h3>
+                        <div class="screenshot-placeholder">
+                            <div class="ph-icon">📸</div>
+                            <div class="ph-text">스크린샷: 워드프레스 draft 업로드 결과 (추후 삽입)</div>
+                        </div>
+                        <div class="info-box" style="margin-top: 16px; font-size: 17px;">
+                            <p>블로그 글이 완성되면 <strong>워드프레스 REST API</strong>를 통해<br>
+                            자동으로 draft 상태로 업로드됩니다.</p>
+                            <p style="margin-top: 8px; color: var(--text-light);">
+                                쉽게 말하면: AI가 글을 써서 내 블로그에 올려놓는 것!</p>
+                        </div>
+                    </div>
+                    <!-- 인스타그램 설명 -->
+                    <div style="flex: 1;">
+                        <h3 class="sub-title" style="margin-top: 0;">📱 인스타그램 자동 게시</h3>
+                        <div class="screenshot-placeholder">
+                            <div class="ph-icon">📸</div>
+                            <div class="ph-text">스크린샷: 인스타그램 자동 게시 화면 (추후 삽입)</div>
+                        </div>
+                        <div class="tip-box" style="margin-top: 16px; font-size: 17px;">
+                            <p>카드뉴스 5장 + 캡션 + 해시태그 15개를<br>
+                            <strong>Playwright</strong>(자동 브라우저)로 인스타에 게시합니다.</p>
+                            <p style="margin-top: 8px; color: var(--text-light);">
+                                쉽게 말하면: AI가 내 인스타에 예쁜 게시물을 올리는 것!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span class="chapter-indicator">CH2 · 실전 사례</span>
+            <span class="slide-number">16</span>
+        </div>
+
+        <!-- 슬라이드 17: 실제 라이브 결과 확인 -->
+        <div id="slide-17" class="slide density-b bg-cool">
+            <h2 class="slide-title">실제 라이브 결과를 확인해 보세요</h2>
+            <div class="slide-body">
+                <div class="slide-text">
+                    <!-- 실제 결과 확인 안내 -->
+                    <p style="font-size: 22px; margin-bottom: 24px; color: var(--text-medium);">
+                        이건 이론이 아닙니다. <strong class="highlight">실제로 동작하고 있는</strong> 스킬의 결과물이에요.
+                    </p>
+                    <div style="display: flex; gap: 32px;">
+                        <!-- 인스타 스크린샷 -->
+                        <div style="flex: 1;">
+                            <div class="screenshot-placeholder" style="padding: 80px 40px;">
+                                <div class="ph-icon">📸</div>
+                                <div class="ph-text">스크린샷: @nomoremanual_official 인스타그램 실제 게시물 (추후 삽입)</div>
+                            </div>
+                        </div>
+                        <!-- 결과 요약 -->
+                        <div style="flex: 1;">
+                            <h3 class="sub-title" style="margin-top: 0;">이 스킬 한 번 실행으로</h3>
+                            <ul class="check-list" style="font-size: 19px;">
+                                <li>엑셀 시세표 — 차트 3개 포함</li>
+                                <li>PPT 보고서 — 10장, 차트 4종</li>
+                                <li>SEO 블로그 — 2,500자+</li>
+                                <li>카드뉴스 — 5장</li>
+                                <li>인사이트 점수 — 82점 A등급</li>
+                                <li>워드프레스 발행 — draft 완료</li>
+                                <li>인스타 게시 — 자동 완료</li>
+                            </ul>
+                            <div class="gold-box" style="margin-top: 16px; text-align: center;">
+                                <strong style="font-size: 20px;">입력부터 완료까지: 약 2분</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span class="chapter-indicator">CH2 · 실전 사례</span>
+            <span class="slide-number">17</span>
+        </div>
+
+        <!-- 슬라이드 18: 12단계 검증 체크리스트 -->
+        <div id="slide-18" class="slide density-c">
+            <h2 class="slide-title">12단계 품질 검증 체크리스트</h2>
+            <div class="slide-body">
+                <!-- 검증 안내 -->
+                <p style="font-size: 20px; margin-bottom: 16px; color: var(--text-medium);">
+                    AI가 만든 결과물도 <strong>품질 검증</strong>이 필요합니다. 이 체크리스트로 빠짐없이 확인하세요.
+                </p>
+                <!-- 12단계 체크리스트 테이블 -->
+                <table class="compact-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 40px;">#</th>
+                            <th style="width: 200px;">검증 항목</th>
+                            <th>확인 내용</th>
+                            <th style="width: 100px;">상태</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>매물 정보 파싱</td>
+                            <td>단지명, 가격, 면적 등 모든 정보가 정확하게 추출되었는가</td>
+                            <td>✅ 확인</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>시세 데이터 검증</td>
+                            <td>KB시세, 실거래가가 실제 데이터와 일치하는가</td>
+                            <td>✅ 확인</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>인사이트 점수</td>
+                            <td>7개 항목 점수가 합리적이고 근거가 명확한가</td>
+                            <td>✅ 확인</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>엑셀 차트</td>
+                            <td>막대/레이더 차트가 정상 표시되는가</td>
+                            <td>✅ 확인</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>PPT 레이아웃</td>
+                            <td>10장 슬라이드, 차트, 텍스트가 깔끔한가</td>
+                            <td>✅ 확인</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>블로그 SEO</td>
+                            <td>H2 구조, 키워드, FAQ 스키마가 포함되었는가</td>
+                            <td>✅ 확인</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>강조 필기 스타일</td>
+                            <td>형광펜, 밑줄, 네모 박스가 올바르게 적용되었는가</td>
+                            <td>✅ 확인</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>카드뉴스 품질</td>
+                            <td>1080×1080px, 브랜드 컬러, 가독성이 확보되었는가</td>
+                            <td>✅ 확인</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>워드프레스 업로드</td>
+                            <td>draft 상태로 정상 업로드되었는가</td>
+                            <td>✅ 확인</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>인스타 게시</td>
+                            <td>카드뉴스 5장 + 캡션 + 해시태그가 정상 게시되었는가</td>
+                            <td>✅ 확인</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>AdSense 광고 위치</td>
+                            <td>첫 H2 아래에 수동 광고 코드가 삽입되었는가</td>
+                            <td>✅ 확인</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>브랜드 일관성</td>
+                            <td>모든 산출물에 동일한 컬러/점수가 표기되었는가</td>
+                            <td>✅ 확인</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- 핵심 메시지 -->
+                <div class="warning-box" style="margin-top: 16px; font-size: 17px;">
+                    <strong>중요:</strong> AI가 만들었더라도, 최종 확인은 <strong>사람이</strong> 해야 합니다. 특히 가격과 시세 데이터는 반드시 더블체크하세요.
+                </div>
+            </div>
+            <span class="chapter-indicator">CH2 · 실전 사례</span>
+            <span class="slide-number">18</span>
+        </div>
+
+<!-- ============================================
+     CH3. 처음부터 만들기 (슬라이드 19~26)
+     30분이면 첫 스킬을 만들 수 있다는 자신감 부여
+     ============================================ -->
+
+<!-- 슬라이드 19: CH3 챕터 표지 — "30분이면 첫 스킬 완성" -->
+<div id="slide-19" class="slide density-a chapter-cover">
+    <!-- 배경 장식 숫자 -->
+    <div class="chapter-number">03</div>
+    <div class="chapter-label">Chapter 3</div>
+    <h2 class="chapter-title">30분이면 첫 스킬 완성</h2>
+    <p class="chapter-subtitle">코딩 몰라도 괜찮습니다. 폴더 만들고, 글 쓰고, 실행하면 끝.</p>
+    <span class="chapter-indicator">CH3 · 처음부터 만들기</span>
+    <span class="slide-number">19</span>
+</div>
+
+<!-- 슬라이드 20: Step 1 — 폴더 구조 만들기 -->
+<!-- 스킬 파일들이 저장되는 폴더 구조를 코드 블록으로 보여줌 -->
+<div id="slide-20" class="slide density-c">
+    <h2 class="slide-title">Step 1: 폴더 구조 만들기</h2>
+    <div class="slide-body">
+        <!-- 설명 텍스트 -->
+        <p style="font-size: 22px; margin-bottom: 20px;">
+            AI에게 업무를 가르치려면, 먼저 <span class="highlight">"교재를 놓을 책장"</span>이 필요합니다.<br>
+            아래 3개 폴더만 만들면 준비 끝입니다.
+        </p>
+
+        <!-- 폴더 트리 코드 블록 -->
+        <pre><code><span class="comment"># 홈 디렉토리에 .claude 폴더 생성</span>
+~/.claude/
+├── skills/          <span class="comment"># 스킬 파일 저장소 (업무 매뉴얼)</span>
+│   ├── blog-auto.md
+│   ├── report-gen.md
+│   └── sns-publish.md
+│
+├── commands/        <span class="comment"># 슬래시 명령어 (/매물접수 같은 단축키)</span>
+│   └── 매물접수.md
+│
+├── agents/          <span class="comment"># 에이전트 설정 (AI 팀원 역할 정의)</span>
+│   ├── researcher.md
+│   └── writer.md
+│
+└── CLAUDE.md        <span class="comment"># 총 설정 파일 (AI의 행동 규칙서)</span></code></pre>
+
+        <!-- 보충 설명 박스 -->
+        <div class="info-box" style="margin-top: 20px;">
+            <div class="box-title">왜 폴더를 나눌까요?</div>
+            <p>서류를 종류별로 파일철에 넣듯, AI도 정리된 구조에서 더 똑똑하게 일합니다.<br>
+            <strong>skills</strong> = 업무 매뉴얼, <strong>commands</strong> = 단축키, <strong>agents</strong> = 팀원 이력서</p>
+        </div>
+    </div>
+    <span class="chapter-indicator">CH3 · 처음부터 만들기</span>
+    <span class="slide-number">20</span>
+</div>
+
+<!-- 슬라이드 21: Step 2 — CLAUDE.md 설정 -->
+<!-- AI의 행동 규칙서인 CLAUDE.md 파일 구조를 2단 레이아웃으로 설명 -->
+<div id="slide-21" class="slide density-d">
+    <h2 class="slide-title">Step 2: CLAUDE.md — AI의 행동 규칙서</h2>
+    <div class="slide-body">
+        <p style="margin-bottom: 16px; font-size: 19px;">
+            CLAUDE.md는 AI에게 <span class="highlight">"이렇게 일해라"</span>고 알려주는 <strong>사규집</strong>입니다.
+        </p>
+
+        <!-- 2단 레이아웃: 왼쪽 코드, 오른쪽 설명 -->
+        <div class="two-column">
+            <!-- 왼쪽: 코드 블록 -->
+            <div>
+                <pre><code><span class="comment"># CLAUDE.md 기본 구조</span>
+
+<span class="highlight-line">## Hard Rules (절대 규칙)</span>
+- 코드 작성 전 반드시 plan.md 승인
+- API 키 절대 하드코딩 금지
+- 한국어 주석 필수
+
+<span class="highlight-line">## Design Standard (디자인 기준)</span>
+- "내가 돈 주고 사겠는가?" 기준
+- 시각 요소 없는 텍스트 나열 = 재작업
+
+<span class="highlight-line">## Agent Modes (모드 설정)</span>
+- "설계" → /architect 모드
+- "검토" → /critic 모드
+
+<span class="highlight-line">## Security (보안)</span>
+- .env 파일로 키 관리
+- 민감 정보 커밋 금지</code></pre>
+            </div>
+
+            <!-- 오른쪽: 각 섹션 설명 -->
+            <div>
+                <div class="info-box" style="margin-top: 0;">
+                    <div class="box-title">Hard Rules</div>
+                    <p>"절대 어기면 안 되는 것"을 적습니다.<br>
+                    신입 직원에게 첫날 알려주는 것과 같습니다.</p>
+                </div>
+                <div class="tip-box">
+                    <div class="box-title">Design Standard</div>
+                    <p>결과물의 <strong>최소 품질 기준</strong>을 정합니다.<br>
+                    이걸 정해두면 AI가 알아서 수준을 맞춥니다.</p>
+                </div>
+                <div class="warning-box">
+                    <div class="box-title">Security</div>
+                    <p>비밀번호나 API 키가 외부에 노출되지 않도록<br>
+                    <strong>보안 규칙</strong>을 반드시 포함하세요!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <span class="chapter-indicator">CH3 · 처음부터 만들기</span>
+    <span class="slide-number">21</span>
+</div>
+
+<!-- 슬라이드 22: Step 3 — 플랜 모드부터 시작 -->
+<!-- "설계→승인→실행" 3단계를 강조. 코드부터 쓰지 말라는 경고 -->
+<div id="slide-22" class="slide density-b">
+    <h2 class="slide-title">Step 3: 플랜 모드부터 시작!</h2>
+    <div class="slide-body">
+        <div class="slide-text">
+            <p style="font-size: 22px; margin-bottom: 24px;">
+                요리를 시작하기 전에 레시피를 먼저 확인하듯,<br>
+                AI에게도 <span class="highlight">"먼저 계획을 세워"</span>라고 말해야 합니다.
+            </p>
+
+            <!-- 설계→승인→실행 3단계 플로우 -->
+            <div class="flow-horizontal" style="justify-content: center; margin-bottom: 28px;">
+                <div class="flow-step active">
+                    <div class="step-icon">📋</div>
+                    <div class="step-label">1. 설계</div>
+                    <p style="font-size: 14px; margin-top: 4px;">plan.md 작성</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step gold">
+                    <div class="step-icon">✅</div>
+                    <div class="step-label">2. 승인</div>
+                    <p style="font-size: 14px; margin-top: 4px;">내가 확인</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step active">
+                    <div class="step-icon">⚡</div>
+                    <div class="step-label">3. 실행</div>
+                    <p style="font-size: 14px; margin-top: 4px;">코드 작성</p>
+                </div>
+            </div>
+
+            <!-- 경고 박스 -->
+            <div class="warning-box">
+                <div class="box-title">코드 먼저 쓰지 마세요!</div>
+                <p>계획 없이 바로 코드를 쓰면, 수정에 수정을 반복하게 됩니다.<br>
+                <strong>"설계부터"</strong>를 입력하면 AI가 plan.md를 먼저 작성합니다.<br>
+                그 계획이 마음에 들면 "승인"이라고 말하세요. 그때부터 실행입니다.</p>
+            </div>
+        </div>
+    </div>
+    <span class="chapter-indicator">CH3 · 처음부터 만들기</span>
+    <span class="slide-number">22</span>
+</div>
+
+<!-- 슬라이드 23: Step 4 — 스킬 파일 작성법 -->
+<!-- .md 스킬 파일의 4가지 핵심 섹션을 코드 블록으로 보여줌 -->
+<div id="slide-23" class="slide density-d">
+    <h2 class="slide-title">Step 4: 스킬 파일 작성법</h2>
+    <div class="slide-body">
+        <p style="margin-bottom: 16px; font-size: 19px;">
+            스킬 파일은 <span class="highlight">AI에게 주는 업무 매뉴얼</span>입니다. 4가지 섹션만 채우면 됩니다.
+        </p>
+
+        <!-- 2단 레이아웃: 왼쪽 코드, 오른쪽 설명 카드 -->
+        <div class="two-column">
+            <!-- 왼쪽: 스킬 파일 코드 블록 -->
+            <div>
+                <pre><code><span class="comment"># 스킬 파일 예시: blog-auto.md</span>
+
+<span class="highlight-line">## 트리거 (언제 실행?)</span>
+키워드: "블로그", "포스팅"
+→ 이 단어가 나오면 자동 실행
+
+<span class="highlight-line">## 단계 (어떻게 진행?)</span>
+1. 주제 키워드 분석
+2. SEO 제목 3개 생성
+3. 본문 2000자 작성
+4. 워드프레스 발행
+
+<span class="highlight-line">## 에이전트 (누가 담당?)</span>
+- researcher: 자료 조사
+- writer: 글 작성
+- publisher: 발행 담당
+
+<span class="highlight-line">## 산출물 (결과는?)</span>
+- 블로그 포스트 1건
+- 썸네일 이미지 1장
+- SNS 홍보문구 3건</code></pre>
+            </div>
+
+            <!-- 오른쪽: 4섹션 설명 카드 -->
+            <div>
+                <div class="icon-card" style="margin-bottom: 12px;">
+                    <div class="card-icon">🎯</div>
+                    <div class="card-content">
+                        <h4>트리거</h4>
+                        <p>"이 단어를 말하면 시작해라"<br>자동 반응의 방아쇠 역할</p>
+                    </div>
+                </div>
+                <div class="icon-card" style="margin-bottom: 12px;">
+                    <div class="card-icon">📝</div>
+                    <div class="card-content">
+                        <h4>단계</h4>
+                        <p>"이 순서대로 해라"<br>업무 절차를 번호로 나열</p>
+                    </div>
+                </div>
+                <div class="icon-card" style="margin-bottom: 12px;">
+                    <div class="card-icon">👥</div>
+                    <div class="card-content">
+                        <h4>에이전트</h4>
+                        <p>"이 역할을 맡아라"<br>AI 팀원별 담당 업무 지정</p>
+                    </div>
+                </div>
+                <div class="icon-card">
+                    <div class="card-icon">📦</div>
+                    <div class="card-content">
+                        <h4>산출물</h4>
+                        <p>"이것들을 만들어라"<br>최종 결과물 목록 명시</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <span class="chapter-indicator">CH3 · 처음부터 만들기</span>
+    <span class="slide-number">23</span>
+</div>
+
+<!-- 슬라이드 24: Step 5 — 테스트와 반복 -->
+<!-- 실행→확인→수정 순환 과정을 번호 리스트로 설명 -->
+<div id="slide-24" class="slide density-b">
+    <h2 class="slide-title">Step 5: 테스트와 반복</h2>
+    <div class="slide-body">
+        <div class="slide-text">
+            <p style="font-size: 22px; margin-bottom: 24px;">
+                스킬을 만들었으면 바로 실행해보세요.<br>
+                처음부터 완벽할 필요 없습니다. <span class="highlight">고치면서 완성</span>하면 됩니다.
+            </p>
+
+            <!-- 3단계 순환 -->
+            <ol class="numbered-list">
+                <li>
+                    <strong>실행하기</strong> — 스킬 트리거 키워드를 입력합니다.<br>
+                    <span style="color: var(--text-light);">예: "블로그 써줘" → 블로그 자동화 스킬 실행</span>
+                </li>
+                <li>
+                    <strong>결과 확인하기</strong> — 산출물이 예상대로 나왔는지 봅니다.<br>
+                    <span style="color: var(--text-light);">예: "제목이 너무 딱딱해" → 피드백 메모</span>
+                </li>
+                <li>
+                    <strong>수정하기</strong> — 문제점을 스킬 파일에 반영합니다.<br>
+                    <span style="color: var(--text-light);">예: "제목은 친근한 말투로" 규칙 추가</span>
+                </li>
+            </ol>
+
+            <div class="tip-box" style="margin-top: 20px;">
+                <div class="box-title">이것이 "피드백 루프"입니다</div>
+                <p>실행 → 확인 → 수정을 반복할수록 스킬이 점점 똑똑해집니다.<br>
+                마치 신입 직원이 경험을 쌓으며 성장하는 것과 같습니다.</p>
+            </div>
+        </div>
+    </div>
+    <span class="chapter-indicator">CH3 · 처음부터 만들기</span>
+    <span class="slide-number">24</span>
+</div>
+
+<!-- 슬라이드 25: Step 6 — Hooks와 Memory -->
+<!-- hooks는 자동 반응, memory는 장기 기억이라는 두 핵심 개념 설명 -->
+<div id="slide-25" class="slide density-b">
+    <h2 class="slide-title">Step 6: Hooks와 Memory</h2>
+    <div class="slide-body">
+        <div class="slide-text">
+            <p style="font-size: 22px; margin-bottom: 20px;">
+                스킬을 더 똑똑하게 만드는 두 가지 비밀 무기가 있습니다.
+            </p>
+
+            <!-- Hooks 설명 -->
+            <div class="icon-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 16px;">
+                <div class="glass-card">
+                    <h3 class="sub-title" style="margin-top: 0; color: var(--primary);">Hooks — 자동 반응</h3>
+                    <p style="font-size: 18px; margin-bottom: 12px;">
+                        "이런 상황이 생기면 자동으로 이걸 해라"
+                    </p>
+                    <ul class="styled-list" style="font-size: 17px;">
+                        <li>메시지 제출 시 → 스킬 트리거 자동 감지</li>
+                        <li>파일 저장 시 → 자동 포맷팅</li>
+                        <li>에러 발생 시 → 자동 복구 시도</li>
+                    </ul>
+                    <p style="font-size: 16px; color: var(--text-light); margin-top: 8px;">
+                        비유: 현관문 센서등 — 사람이 오면 자동 점등
+                    </p>
+                </div>
+
+                <div class="glass-card">
+                    <h3 class="sub-title" style="margin-top: 0; color: var(--accent-warm);">Memory — 장기 기억</h3>
+                    <p style="font-size: 18px; margin-bottom: 12px;">
+                        "이전에 배운 걸 다음에도 기억해"
+                    </p>
+                    <ul class="styled-list" style="font-size: 17px;">
+                        <li>사용자 선호도 기억 (말투, 스타일)</li>
+                        <li>실수했던 패턴 기억 (같은 실수 방지)</li>
+                        <li>프로젝트 맥락 기억 (연속 작업 가능)</li>
+                    </ul>
+                    <p style="font-size: 16px; color: var(--text-light); margin-top: 8px;">
+                        비유: 단골 카페 — "평소 드시는 거 드릴까요?"
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 스크린샷 플레이스홀더 -->
+        <div class="slide-visual" style="flex: 0 0 320px;">
+            <div class="screenshot-placeholder" style="width: 100%;">
+                <div class="ph-icon">📸</div>
+                <div class="ph-text">Hooks 설정 화면<br>(12:20~21AM 스크린샷)</div>
+            </div>
+        </div>
+    </div>
+    <span class="chapter-indicator">CH3 · 처음부터 만들기</span>
+    <span class="slide-number">25</span>
+</div>
+
+<!-- 슬라이드 26: 바로 쓸 수 있는 스타터 템플릿 3종 -->
+<!-- 3컬럼 카드로 블로그/리포트/SNS 템플릿 제공 -->
+<div id="slide-26" class="slide density-c">
+    <h2 class="slide-title">바로 쓸 수 있는 스타터 템플릿 3종</h2>
+    <div class="slide-body">
+        <p style="font-size: 21px; margin-bottom: 20px;">
+            아래 템플릿을 <code>~/.claude/skills/</code> 폴더에 복사하면 바로 사용할 수 있습니다.
+        </p>
+
+        <!-- 3컬럼 템플릿 카드 -->
+        <div class="icon-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+            <!-- 블로그 자동화 -->
+            <div class="glass-card" style="text-align: center;">
+                <div style="font-size: 48px; margin-bottom: 12px;">📝</div>
+                <h4 style="font-size: 22px; font-weight: 700; margin-bottom: 8px; color: var(--primary-dark);">블로그 자동화</h4>
+                <p style="font-size: 16px; color: var(--text-medium); margin-bottom: 16px;">
+                    키워드 입력 → SEO 제목 → 본문 작성 → 워드프레스 발행
+                </p>
+                <pre style="text-align: left; font-size: 14px; padding: 14px;"><code><span class="comment"># blog-auto.md</span>
+트리거: "블로그"
+단계:
+  1. 키워드 SEO 분석
+  2. 제목 3개 후보 생성
+  3. 본문 2000자 작성
+  4. WP 드래프트 발행
+산출물: 포스트 1건</code></pre>
+            </div>
+
+            <!-- 리포트 생성 -->
+            <div class="glass-card" style="text-align: center;">
+                <div style="font-size: 48px; margin-bottom: 12px;">📊</div>
+                <h4 style="font-size: 22px; font-weight: 700; margin-bottom: 8px; color: var(--primary-dark);">리포트 생성</h4>
+                <p style="font-size: 16px; color: var(--text-medium); margin-bottom: 16px;">
+                    데이터 입력 → 분석 → 차트 생성 → PDF 리포트
+                </p>
+                <pre style="text-align: left; font-size: 14px; padding: 14px;"><code><span class="comment"># report-gen.md</span>
+트리거: "리포트"
+단계:
+  1. 데이터 파싱
+  2. 핵심 지표 추출
+  3. 차트 생성
+  4. PDF 변환
+산출물: 리포트 PDF 1건</code></pre>
+            </div>
+
+            <!-- SNS 발행 -->
+            <div class="glass-card" style="text-align: center;">
+                <div style="font-size: 48px; margin-bottom: 12px;">📱</div>
+                <h4 style="font-size: 22px; font-weight: 700; margin-bottom: 8px; color: var(--primary-dark);">SNS 발행</h4>
+                <p style="font-size: 16px; color: var(--text-medium); margin-bottom: 16px;">
+                    주제 입력 → 플랫폼별 문구 → 이미지 → 자동 게시
+                </p>
+                <pre style="text-align: left; font-size: 14px; padding: 14px;"><code><span class="comment"># sns-publish.md</span>
+트리거: "SNS"
+단계:
+  1. 플랫폼 선택
+  2. 맞춤 카피 작성
+  3. 이미지 생성
+  4. 자동 게시
+산출물: 게시물 3건</code></pre>
+            </div>
+        </div>
+
+        <div class="gold-box" style="text-align: center; margin-top: 16px;">
+            <strong>이 3가지 템플릿으로 시작해서, 자신만의 스킬로 발전시켜 보세요!</strong>
+        </div>
+    </div>
+    <span class="chapter-indicator">CH3 · 처음부터 만들기</span>
+    <span class="slide-number">26</span>
+</div>
+
+
+<!-- ============================================
+     CH4. 스킬 체이닝 (슬라이드 27~33)
+     여러 스킬을 연결하는 파이프라인 개념
+     ============================================ -->
+
+<!-- 슬라이드 27: CH4 챕터 표지 — "1개 입력 → 10개 채널 산출물" -->
+<div id="slide-27" class="slide density-a chapter-cover">
+    <div class="chapter-number">04</div>
+    <div class="chapter-label">Chapter 4</div>
+    <h2 class="chapter-title">1개 입력 → 10개 채널 산출물</h2>
+    <p class="chapter-subtitle">스킬 하나로 끝이 아닙니다. 여러 스킬을 연결하면 자동화 파이프라인이 됩니다.</p>
+    <span class="chapter-indicator">CH4 · 스킬 체이닝</span>
+    <span class="slide-number">27</span>
+</div>
+
+<!-- 슬라이드 28: 체이닝이란? — 파이프라인 개념 -->
+<!-- 공장 컨베이어 벨트 비유로 파이프라인 설명 -->
+<div id="slide-28" class="slide density-b">
+    <h2 class="slide-title">체이닝이란? — 파이프라인 개념</h2>
+    <div class="slide-body">
+        <div class="slide-text">
+            <p style="font-size: 22px; margin-bottom: 20px;">
+                <span class="highlight">체이닝</span>은 여러 스킬을 순서대로 연결하는 것입니다.<br>
+                마치 <strong>공장 컨베이어 벨트</strong>처럼, 앞 단계의 결과가 다음 단계의 입력이 됩니다.
+            </p>
+
+            <!-- A→B→C 파이프라인 플로우 -->
+            <div class="flow-horizontal" style="justify-content: center; margin-bottom: 24px;">
+                <div class="flow-step">
+                    <div class="step-icon">📥</div>
+                    <div class="step-label">입력</div>
+                    <p style="font-size: 13px; margin-top: 4px;">원재료 투입</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step active">
+                    <div class="step-icon">🔧</div>
+                    <div class="step-label">스킬 A</div>
+                    <p style="font-size: 13px; margin-top: 4px;">1차 가공</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step active">
+                    <div class="step-icon">🔨</div>
+                    <div class="step-label">스킬 B</div>
+                    <p style="font-size: 13px; margin-top: 4px;">2차 가공</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step active">
+                    <div class="step-icon">🎨</div>
+                    <div class="step-label">스킬 C</div>
+                    <p style="font-size: 13px; margin-top: 4px;">포장/발행</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step gold">
+                    <div class="step-icon">📦</div>
+                    <div class="step-label">산출물</div>
+                    <p style="font-size: 13px; margin-top: 4px;">완제품 출하</p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <div class="box-title">왜 체이닝이 강력할까요?</div>
+                <p>스킬 하나하나는 단순해도, <strong>연결하면 복잡한 업무 전체를 자동화</strong>할 수 있습니다.<br>
+                블로그 글 쓰기 + 이미지 생성 + SNS 발행 = 콘텐츠 마케팅 자동화!</p>
+            </div>
+        </div>
+    </div>
+    <span class="chapter-indicator">CH4 · 스킬 체이닝</span>
+    <span class="slide-number">28</span>
+</div>
+
+<!-- 슬라이드 29: 에이전트 팀 협업 구조 -->
+<!-- 4색 에이전트 배지로 역할별 플로우 표현 -->
+<div id="slide-29" class="slide density-c">
+    <h2 class="slide-title">에이전트 팀 협업 구조</h2>
+    <div class="slide-body">
+        <p style="font-size: 21px; margin-bottom: 20px;">
+            체이닝에서 각 단계를 담당하는 것이 <span class="highlight">에이전트(AI 팀원)</span>입니다.<br>
+            실제 회사 팀처럼, 각자 역할을 맡아 협업합니다.
+        </p>
+
+        <!-- 에이전트 플로우 -->
+        <div class="flow-horizontal" style="justify-content: center; margin-bottom: 24px;">
+            <div class="flow-step" style="border-color: #3B82F6;">
+                <span class="agent-badge blue">리서처</span>
+                <p style="font-size: 14px; margin-top: 8px;">자료 조사<br>데이터 수집</p>
+            </div>
+            <div class="flow-arrow" style="color: #3B82F6;">→</div>
+            <div class="flow-step" style="border-color: #10B981;">
+                <span class="agent-badge green">라이터</span>
+                <p style="font-size: 14px; margin-top: 8px;">글 작성<br>카피 생성</p>
+            </div>
+            <div class="flow-arrow" style="color: #10B981;">→</div>
+            <div class="flow-step" style="border-color: #F97316;">
+                <span class="agent-badge orange">디자이너</span>
+                <p style="font-size: 14px; margin-top: 8px;">이미지 생성<br>레이아웃 디자인</p>
+            </div>
+            <div class="flow-arrow" style="color: #F97316;">→</div>
+            <div class="flow-step" style="border-color: #EF4444;">
+                <span class="agent-badge red">퍼블리셔</span>
+                <p style="font-size: 14px; margin-top: 8px;">블로그 발행<br>SNS 게시</p>
+            </div>
+        </div>
+
+        <!-- 보충 설명 2열 -->
+        <div class="icon-grid" style="grid-template-columns: 1fr 1fr;">
+            <div class="tip-box" style="margin: 0;">
+                <div class="box-title">각자 전문 분야가 있습니다</div>
+                <p>리서처는 조사만, 라이터는 글만 씁니다.<br>
+                역할을 나누면 <strong>결과물 품질이 올라갑니다.</strong></p>
+            </div>
+            <div class="info-box" style="margin: 0;">
+                <div class="box-title">동시에 일할 수도 있습니다</div>
+                <p>리서처가 조사하는 동안 디자이너가 템플릿을 준비하는 등<br>
+                <strong>병렬 작업</strong>으로 시간을 절약합니다.</p>
+            </div>
+        </div>
+    </div>
+    <span class="chapter-indicator">CH4 · 스킬 체이닝</span>
+    <span class="slide-number">29</span>
+</div>
+
+<!-- 슬라이드 30: SendMessage — 에이전트 간 소통 -->
+<!-- 에이전트끼리 대화하는 방법을 코드 예시로 설명 -->
+<div id="slide-30" class="slide density-b">
+    <h2 class="slide-title">SendMessage — 에이전트 간 소통</h2>
+    <div class="slide-body">
+        <div class="slide-text">
+            <p style="font-size: 22px; margin-bottom: 20px;">
+                에이전트들은 <code>SendMessage</code>를 통해 서로 대화합니다.<br>
+                마치 회사 메신저로 업무를 주고받는 것과 같습니다.
+            </p>
+
+            <!-- SendMessage 코드 예시 -->
+            <pre style="margin-bottom: 20px;"><code><span class="comment"># 리서처 → 라이터에게 조사 결과 전달</span>
+SendMessage(
+  to: "writer",
+  message: "시세 조사 완료!
+    - 전세 시세: 5.2~5.8억
+    - 최근 거래: 5.5억 (3개월 전)
+    - 주변 시세: 4.8~6.0억"
+)
+
+<span class="comment"># 라이터 → 퍼블리셔에게 원고 전달</span>
+SendMessage(
+  to: "publisher",
+  message: "블로그 원고 작성 완료.
+    파일: output/blog-post.html
+    발행 부탁드립니다."
+)</code></pre>
+
+            <div class="info-box">
+                <div class="box-title">에이전트끼리 알아서 대화합니다</div>
+                <p>여러분이 할 일은 처음에 <strong>"매물접수 해줘"</strong>라고 한 마디 하는 것뿐.<br>
+                나머지는 에이전트들이 서로 메시지를 주고받으며 처리합니다.</p>
+            </div>
+        </div>
+    </div>
+    <span class="chapter-indicator">CH4 · 스킬 체이닝</span>
+    <span class="slide-number">30</span>
+</div>
+
+<!-- 슬라이드 31: 검증 게이트 — 단계별 품질 체크 -->
+<!-- 통과/실패 게이트 개념을 플로우로 설명 -->
+<div id="slide-31" class="slide density-b">
+    <h2 class="slide-title">검증 게이트 — 단계별 품질 체크</h2>
+    <div class="slide-body">
+        <div class="slide-text">
+            <p style="font-size: 22px; margin-bottom: 20px;">
+                파이프라인 중간중간에 <span class="highlight">"검문소"</span>를 설치합니다.<br>
+                품질 기준을 통과해야만 다음 단계로 넘어갑니다.
+            </p>
+
+            <!-- 게이트 플로우 -->
+            <div class="flow-horizontal" style="justify-content: center; margin-bottom: 24px;">
+                <div class="flow-step active">
+                    <div class="step-label">스킬 A 실행</div>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step gold">
+                    <div class="step-icon">🔍</div>
+                    <div class="step-label">검증 게이트</div>
+                    <p style="font-size: 13px; margin-top: 4px;">품질 OK?</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step active">
+                    <div class="step-label">스킬 B 실행</div>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step gold">
+                    <div class="step-icon">🔍</div>
+                    <div class="step-label">최종 검증</div>
+                    <p style="font-size: 13px; margin-top: 4px;">발행 OK?</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step" style="border-color: #10B981; background: #ECFDF5;">
+                    <div class="step-icon">✅</div>
+                    <div class="step-label">완료</div>
+                </div>
+            </div>
+
+            <!-- 통과/실패 설명 -->
+            <div class="icon-grid" style="grid-template-columns: 1fr 1fr;">
+                <div class="tip-box" style="margin: 0;">
+                    <div class="box-title">통과 → 다음 단계로</div>
+                    <p>글자 수 OK, 이미지 크기 OK, 링크 정상<br>→ 자동으로 다음 스킬 실행</p>
+                </div>
+                <div class="danger-box" style="margin: 0;">
+                    <div class="box-title">실패 → 자동 수정 후 재시도</div>
+                    <p>기준 미달 시 AI가 스스로 수정합니다.<br>→ 수정 후 다시 검증 게이트 통과 시도</p>
+                </div>
+            </div>
+
+            <div class="tip-box" style="margin-top: 16px;">
+                <div class="box-title">왜 게이트가 중요할까요?</div>
+                <p>검증 없이 바로 발행하면 오류가 그대로 공개됩니다.<br>
+                <strong>게이트 = 품질 보증 장치</strong>. 불량품이 출하되지 않도록 막아줍니다.</p>
+            </div>
+        </div>
+    </div>
+    <span class="chapter-indicator">CH4 · 스킬 체이닝</span>
+    <span class="slide-number">31</span>
+</div>
+
+<!-- 슬라이드 32: 실전 체인 — 매물접수 전체 타임라인 -->
+<!-- 매물접수 스킬의 전체 흐름을 타임라인으로 시각화 -->
+<div id="slide-32" class="slide density-c">
+    <h2 class="slide-title">실전 체인: 매물접수 전체 타임라인</h2>
+    <div class="slide-body">
+        <p style="font-size: 20px; margin-bottom: 16px;">
+            <span class="highlight-gold">"매물접수 힐스테이트영통 전세 5.8억"</span> 한 줄 입력 후 일어나는 일:
+        </p>
+
+        <!-- 타임라인 -->
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-label">Step 1 — 트리거 감지</div>
+                <div class="timeline-content">"매물접수" 키워드 → 스킬 자동 실행, 매물 정보 파싱</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-label">Step 2 — 시세 조사 (리서처)</div>
+                <div class="timeline-content">네이버 부동산 기반 시세 분석, 주변 매물 비교 리포트 생성</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-label">Step 3 — 카피 작성 (라이터)</div>
+                <div class="timeline-content">블로그 본문 + SNS 홍보문구 + 매물 요약 카드 작성</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-label">Step 4 — 산출물 생성 (디자이너)</div>
+                <div class="timeline-content">엑셀 시세표, PPT 매물장, 카드뉴스 이미지 생성</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-label">Step 5 — 검증 게이트</div>
+                <div class="timeline-content">모든 산출물 품질 확인 — 오류 시 자동 수정</div>
+            </div>
+            <div class="timeline-item gold">
+                <div class="timeline-label">Step 6 — 발행 (퍼블리셔)</div>
+                <div class="timeline-content">워드프레스 블로그 발행 + 인스타그램 자동 게시 완료!</div>
+            </div>
+        </div>
+
+        <div class="gold-box" style="margin-top: 12px; text-align: center;">
+            <strong>입력 1줄 → 7종 산출물 + 2개 플랫폼 자동 발행 = 약 5분</strong>
+        </div>
+    </div>
+    <span class="chapter-indicator">CH4 · 스킬 체이닝</span>
+    <span class="slide-number">32</span>
+</div>
+
+<!-- 슬라이드 33: 나만의 체인 설계하기 -->
+<!-- 워크시트 형태의 빈칸 템플릿 제공 -->
+<div id="slide-33" class="slide density-b">
+    <h2 class="slide-title">나만의 체인 설계하기</h2>
+    <div class="slide-body">
+        <div class="slide-text">
+            <p style="font-size: 22px; margin-bottom: 20px;">
+                아래 워크시트를 채워보세요. 여러분만의 자동화 파이프라인이 완성됩니다.
+            </p>
+
+            <!-- 워크시트 템플릿 -->
+            <div class="gold-box">
+                <h3 style="font-size: 24px; font-weight: 700; margin-bottom: 16px; color: var(--accent-warm); text-align: center;">
+                    나의 체인 설계 워크시트
+                </h3>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div>
+                        <p style="font-weight: 700; margin-bottom: 8px;">1. 입력 (Input)</p>
+                        <div style="background: white; border: 2px dashed var(--accent); border-radius: 8px; padding: 16px; min-height: 48px;">
+                            <span style="color: var(--text-light);">예: "블로그 써줘 [주제]"</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p style="font-weight: 700; margin-bottom: 8px;">2. 에이전트 1 (조사)</p>
+                        <div style="background: white; border: 2px dashed #3B82F6; border-radius: 8px; padding: 16px; min-height: 48px;">
+                            <span style="color: var(--text-light);">예: 리서처 — 자료 수집</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p style="font-weight: 700; margin-bottom: 8px;">3. 에이전트 2 (제작)</p>
+                        <div style="background: white; border: 2px dashed #10B981; border-radius: 8px; padding: 16px; min-height: 48px;">
+                            <span style="color: var(--text-light);">예: 라이터 — 글 작성</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p style="font-weight: 700; margin-bottom: 8px;">4. 산출물 (Outputs)</p>
+                        <div style="background: white; border: 2px dashed var(--accent); border-radius: 8px; padding: 16px; min-height: 48px;">
+                            <span style="color: var(--text-light);">예: 블로그 1건 + 이미지 1장</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-box" style="margin-top: 16px;">
+                <div class="box-title">처음에는 2~3단계로 시작하세요</div>
+                <p>복잡한 체인은 나중에 만들면 됩니다. <strong>입력 → 가공 → 출력</strong>, 이 3단계면 충분합니다.<br>
+                잘 돌아가면 그때 단계를 추가하세요.</p>
+            </div>
+        </div>
+    </div>
+    <span class="chapter-indicator">CH4 · 스킬 체이닝</span>
+    <span class="slide-number">33</span>
+</div>
+
+
+<!-- ============================================
+     CH5. 스킬 진화시키기 (슬라이드 34~39)
+     v1에서 v5로, 피드백과 메모리로 성장하는 과정
+     ============================================ -->
+
+<!-- 슬라이드 34: CH5 챕터 표지 — "v1 → v5, 어떻게 진화하는가" -->
+<div id="slide-34" class="slide density-a chapter-cover">
+    <div class="chapter-number">05</div>
+    <div class="chapter-label">Chapter 5</div>
+    <h2 class="chapter-title">v1 → v5, 어떻게 진화하는가</h2>
+    <p class="chapter-subtitle">스킬은 한 번 만들고 끝이 아닙니다. 쓸수록 똑똑해집니다.</p>
+    <span class="chapter-indicator">CH5 · 스킬 진화시키기</span>
+    <span class="slide-number">34</span>
+</div>
+
+<!-- 슬라이드 35: 매물접수 스킬 진화 과정 -->
+<!-- v1~v5 진화를 타임라인으로 시각화 -->
+<div id="slide-35" class="slide density-c">
+    <h2 class="slide-title">매물접수 스킬 진화 과정</h2>
+    <div class="slide-body">
+        <p style="font-size: 20px; margin-bottom: 16px;">
+            처음에는 텍스트만 출력하던 스킬이, 피드백을 반영할수록 <span class="highlight">점점 강력해졌습니다.</span>
+        </p>
+
+        <!-- 버전별 타임라인 -->
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-label">v1 — 텍스트만</div>
+                <div class="timeline-content">매물 정보를 텍스트로 정리. 산출물 1개. <span style="color: var(--text-light);">"일단 돌아가게만"</span></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-label">v2 — +엑셀 추가</div>
+                <div class="timeline-content">시세 비교 엑셀 자동 생성 추가. 산출물 2개. <span style="color: var(--text-light);">"숫자는 표로 보고 싶어"</span></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-label">v3 — +PPT 추가</div>
+                <div class="timeline-content">매물장 PPT 자동 생성. 산출물 3개. <span style="color: var(--text-light);">"고객한테 보여줄 자료가 필요해"</span></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-label">v4 — +블로그 발행</div>
+                <div class="timeline-content">워드프레스 자동 발행 추가. 산출물 5개. <span style="color: var(--text-light);">"온라인 홍보도 자동으로"</span></div>
+            </div>
+            <div class="timeline-item gold">
+                <div class="timeline-label">v5 — 4에이전트 + 7산출물 + 인스타</div>
+                <div class="timeline-content">에이전트 팀 협업, 인스타그램 자동 게시까지. <span style="color: var(--text-light);">"한 줄이면 전부 끝"</span></div>
+            </div>
+        </div>
+
+        <!-- 비교 스탯 -->
+        <div class="stat-grid" style="margin-top: 16px;">
+            <div class="stat-card">
+                <div class="stat-number">v1</div>
+                <div class="stat-label">산출물 1개<br>에이전트 0명</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" style="color: var(--secondary);">v3</div>
+                <div class="stat-label">산출물 3개<br>에이전트 1명</div>
+            </div>
+            <div class="stat-card gold">
+                <div class="stat-number">v5</div>
+                <div class="stat-label">산출물 7개<br>에이전트 4명</div>
+            </div>
+        </div>
+    </div>
+    <span class="chapter-indicator">CH5 · 스킬 진화시키기</span>
+    <span class="slide-number">35</span>
+</div>
+
+<!-- 슬라이드 36: 피드백 루프 — AI가 기억하고 개선 -->
+<!-- 실행→피드백→메모리 저장→다음 실행 반영 순환 다이어그램 -->
+<div id="slide-36" class="slide density-b">
+    <h2 class="slide-title">피드백 루프 — AI가 기억하고 개선</h2>
+    <div class="slide-body">
+        <div class="slide-text">
+            <p style="font-size: 22px; margin-bottom: 20px;">
+                스킬이 진화하는 비결은 <span class="highlight">피드백 루프</span>입니다.<br>
+                여러분이 한 번 지적하면, AI는 그걸 <strong>영원히 기억</strong>합니다.
+            </p>
+
+            <!-- 순환 플로우 -->
+            <div class="flow-horizontal" style="justify-content: center; margin-bottom: 24px;">
+                <div class="flow-step active">
+                    <div class="step-icon">▶️</div>
+                    <div class="step-label">1. 실행</div>
+                    <p style="font-size: 13px; margin-top: 4px;">스킬 실행</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <div class="step-icon">👀</div>
+                    <div class="step-label">2. 확인</div>
+                    <p style="font-size: 13px; margin-top: 4px;">결과 검토</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step gold">
+                    <div class="step-icon">💬</div>
+                    <div class="step-label">3. 피드백</div>
+                    <p style="font-size: 13px; margin-top: 4px;">"이건 이렇게"</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step active">
+                    <div class="step-icon">💾</div>
+                    <div class="step-label">4. 기억</div>
+                    <p style="font-size: 13px; margin-top: 4px;">메모리 저장</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step" style="border-color: #10B981; background: #ECFDF5;">
+                    <div class="step-icon">🔄</div>
+                    <div class="step-label">다음 실행에 반영</div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <div class="box-title">실제 사례</div>
+                <p><strong>"제목에 이모지 넣지 마"</strong> → AI가 메모리에 저장 → 다음부터 이모지 없는 제목 생성<br>
+                <strong>"글이 너무 딱딱해"</strong> → AI가 톤 규칙 수정 → 다음부터 친근한 말투로 작성<br>
+                한 번 말하면 <span class="highlight">두 번 다시 같은 말 안 해도 됩니다.</span></p>
+            </div>
+        </div>
+    </div>
+    <span class="chapter-indicator">CH5 · 스킬 진화시키기</span>
+    <span class="slide-number">36</span>
+</div>
+
+<!-- 슬라이드 37: Memory 시스템 이해 -->
+<!-- MEMORY.md 구조와 4가지 메모리 타입을 테이블로 설명 -->
+<div id="slide-37" class="slide density-c">
+    <h2 class="slide-title">Memory 시스템 이해</h2>
+    <div class="slide-body">
+        <p style="font-size: 20px; margin-bottom: 16px;">
+            AI의 기억은 <code>MEMORY.md</code> 파일에 저장됩니다. 4가지 종류가 있습니다.
+        </p>
+
+        <!-- 메모리 타입 테이블 -->
+        <table class="compact-table" style="margin-bottom: 20px;">
+            <thead>
+                <tr>
+                    <th style="width: 18%;">메모리 종류</th>
+                    <th style="width: 25%;">무엇을 기억?</th>
+                    <th style="width: 30%;">예시</th>
+                    <th>비유</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong style="color: var(--primary);">user</strong></td>
+                    <td>사용자의 역할, 선호도</td>
+                    <td>"50대, AI 초보, 한국어 존댓말"</td>
+                    <td>직원이 기억하는 상사 취향</td>
+                </tr>
+                <tr>
+                    <td><strong style="color: var(--accent);">feedback</strong></td>
+                    <td>수정 지시, 피드백 내용</td>
+                    <td>"이모지 쓰지 마", "말투 부드럽게"</td>
+                    <td>업무 지적 사항 메모</td>
+                </tr>
+                <tr>
+                    <td><strong style="color: var(--secondary);">project</strong></td>
+                    <td>프로젝트 맥락, 진행 상황</td>
+                    <td>"현재 v5, 인스타 연동 완료"</td>
+                    <td>프로젝트 회의록</td>
+                </tr>
+                <tr>
+                    <td><strong style="color: #8B5CF6;">reference</strong></td>
+                    <td>외부 리소스 위치</td>
+                    <td>"버그 트래킹은 Linear에서"</td>
+                    <td>자주 쓰는 연락처 목록</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- MEMORY.md 구조 코드 블록 -->
+        <pre><code><span class="comment"># MEMORY.md — AI의 장기 기억 인덱스</span>
+
+## feedback — 피드백 기록
+- <span class="highlight-line">feedback_no-emoji.md → "제목에 이모지 넣지 말 것"</span>
+- feedback_tone.md → "친근한 존댓말 사용"
+
+## user — 사용자 정보
+- user_role.md → "부동산 공인중개사, 50대"
+
+## project — 프로젝트 상태
+- project_realestate-v5.md → "매물접수 스킬 v5 운영 중"</code></pre>
+
+        <div class="tip-box" style="margin-top: 12px;">
+            <div class="box-title">기억은 자동으로 쌓입니다</div>
+            <p>여러분이 "기억해"라고 말하거나, 피드백을 주면 AI가 알아서 메모리 파일을 생성합니다.</p>
+        </div>
+    </div>
+    <span class="chapter-indicator">CH5 · 스킬 진화시키기</span>
+    <span class="slide-number">37</span>
+</div>
+
+<!-- 슬라이드 38: MCP 도구 확장 -->
+<!-- 다양한 MCP 도구를 아이콘 카드 그리드로 소개 -->
+<div id="slide-38" class="slide density-c">
+    <h2 class="slide-title">MCP 도구 확장 — AI의 손과 발</h2>
+    <div class="slide-body">
+        <p style="font-size: 20px; margin-bottom: 16px;">
+            <span class="highlight">MCP(Model Context Protocol)</span>는 AI에게 외부 도구를 연결해주는 기술입니다.<br>
+            마치 스마트폰에 앱을 설치하듯, AI에게 새로운 능력을 추가합니다.
+        </p>
+
+        <!-- MCP 도구 카드 그리드 -->
+        <div class="icon-grid" style="grid-template-columns: repeat(3, 1fr);">
+            <div class="icon-card">
+                <div class="card-icon">📧</div>
+                <div class="card-content">
+                    <h4>Gmail</h4>
+                    <p>이메일 자동 작성, 검색, 답장</p>
+                </div>
+            </div>
+            <div class="icon-card">
+                <div class="card-icon">📅</div>
+                <div class="card-content">
+                    <h4>Google Calendar</h4>
+                    <p>일정 생성, 빈 시간 찾기</p>
+                </div>
+            </div>
+            <div class="icon-card">
+                <div class="card-icon">📋</div>
+                <div class="card-content">
+                    <h4>Notion</h4>
+                    <p>문서 작성, DB 관리, 보고서 저장</p>
+                </div>
+            </div>
+            <div class="icon-card">
+                <div class="card-icon">🌐</div>
+                <div class="card-content">
+                    <h4>Playwright</h4>
+                    <p>웹 브라우저 자동 조작, SNS 게시</p>
+                </div>
+            </div>
+            <div class="icon-card">
+                <div class="card-icon">📝</div>
+                <div class="card-content">
+                    <h4>WordPress</h4>
+                    <p>블로그 글 작성, 미디어 업로드</p>
+                </div>
+            </div>
+            <div class="icon-card">
+                <div class="card-icon">🔍</div>
+                <div class="card-content">
+                    <h4>Web Search</h4>
+                    <p>실시간 인터넷 검색, 최신 정보</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-box" style="margin-top: 16px;">
+            <div class="box-title">MCP = AI의 앱스토어</div>
+            <p>MCP 도구를 연결할수록 AI가 할 수 있는 일이 늘어납니다.<br>
+            <strong>이메일 보내기, 일정 잡기, 블로그 발행, SNS 게시</strong> — 전부 AI가 직접 처리합니다.</p>
+        </div>
+    </div>
+    <span class="chapter-indicator">CH5 · 스킬 진화시키기</span>
+    <span class="slide-number">38</span>
+</div>
+
+<!-- 슬라이드 39: 미래 비전 — 한 문장이면 사업이 돌아간다 -->
+<!-- 골드 박스로 핵심 메시지 강조 -->
+<div id="slide-39" class="slide density-b bg-cool">
+    <h2 class="slide-title">미래 비전 — 한 문장이면 사업이 돌아간다</h2>
+    <div class="slide-body">
+        <div class="slide-text">
+            <p style="font-size: 22px; margin-bottom: 24px;">
+                스킬이 충분히 진화하면, 여러분이 할 일은 <span class="highlight">딱 한 줄 입력</span>뿐입니다.<br>
+                나머지는 AI 팀이 알아서 처리합니다.
+            </p>
+
+            <!-- 핵심 골드 박스 -->
+            <div class="gold-box" style="text-align: center; padding: 32px;">
+                <p style="font-size: 16px; color: var(--text-medium); margin-bottom: 12px;">입력한 것:</p>
+                <p style="font-size: 28px; font-weight: 900; color: var(--accent-warm); margin-bottom: 20px;">
+                    "매물접수 힐스테이트영통 전세 5.8억"
+                </p>
+                <p style="font-size: 16px; color: var(--text-medium); margin-bottom: 12px;">자동으로 생산된 것:</p>
+                <div class="stat-grid" style="grid-template-columns: repeat(4, 1fr); gap: 12px;">
+                    <div class="stat-card" style="padding: 16px 12px;">
+                        <div class="stat-number" style="font-size: 32px;">17</div>
+                        <div class="stat-label">파일 생성</div>
+                    </div>
+                    <div class="stat-card" style="padding: 16px 12px;">
+                        <div class="stat-number" style="font-size: 32px;">7</div>
+                        <div class="stat-label">종 산출물</div>
+                    </div>
+                    <div class="stat-card" style="padding: 16px 12px;">
+                        <div class="stat-number" style="font-size: 32px;">2</div>
+                        <div class="stat-label">플랫폼 발행</div>
+                    </div>
+                    <div class="stat-card gold" style="padding: 16px 12px;">
+                        <div class="stat-number" style="font-size: 32px;">5분</div>
+                        <div class="stat-label">소요 시간</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-box" style="margin-top: 20px; text-align: center;">
+                <p style="font-size: 20px;">
+                    <strong>이것이 스킬의 최종 목표입니다.</strong><br>
+                    여러분은 방향만 지시하고, AI가 실행합니다.<br>
+                    <span class="highlight">당신은 사장님이고, AI는 당신의 팀입니다.</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <span class="chapter-indicator">CH5 · 스킬 진화시키기</span>
+    <span class="slide-number">39</span>
+</div>
+
+
+<!-- ============================================
+     CH6. 부록: 이 전자책도 스킬로 만들었습니다 (슬라이드 40~45)
+     메타 가이드 — 전자책 제작 과정 공개
+     ============================================ -->
+
+<!-- 슬라이드 40: CH6 챕터 표지 — "이 책 자체가 스킬의 산물" -->
+<div id="slide-40" class="slide density-a chapter-cover bg-dark" style="background: var(--gradient-dark);">
+    <div class="chapter-number" style="color: var(--primary-light);">06</div>
+    <div class="chapter-label" style="color: var(--accent-light);">Appendix</div>
+    <h2 class="chapter-title" style="color: var(--text-white);">이 책 자체가 스킬의 산물</h2>
+    <p class="chapter-subtitle" style="color: rgba(250,250,249,0.7);">지금 읽고 계신 이 전자책도 AI 스킬로 만들었습니다.</p>
+    <span class="chapter-indicator" style="color: var(--primary-light);">CH6 · 부록</span>
+    <span class="slide-number" style="color: rgba(250,250,249,0.5);">40</span>
+</div>
+
+<!-- 슬라이드 41: 클로드에게 주문하는 법 — 프롬프트 팁 -->
+<!-- 좋은 프롬프트 vs 나쁜 프롬프트 비교 -->
+<div id="slide-41" class="slide density-d">
+    <h2 class="slide-title">클로드에게 주문하는 법 — 프롬프트 팁</h2>
+    <div class="slide-body">
+        <p style="margin-bottom: 16px; font-size: 19px;">
+            같은 AI라도 <span class="highlight">어떻게 말하느냐</span>에 따라 결과가 완전히 달라집니다.
+        </p>
+
+        <!-- 2단 비교: 나쁜 vs 좋은 프롬프트 -->
+        <div class="two-column">
+            <!-- 왼쪽: 나쁜 프롬프트 -->
+            <div>
+                <div class="vs-side before" style="margin-bottom: 16px;">
+                    <div class="vs-side-title" style="color: #EF4444;">이렇게 하지 마세요</div>
+                </div>
+                <pre style="margin-bottom: 12px;"><code><span class="comment"># 너무 모호한 요청</span>
+"블로그 써줘"
+
+<span class="comment"># 맥락 없는 요청</span>
+"좋은 글 만들어"
+
+<span class="comment"># 한꺼번에 너무 많은 요청</span>
+"블로그도 쓰고 이미지도 만들고
+SNS도 올리고 메일도 보내줘"</code></pre>
+                <div class="danger-box" style="margin: 0;">
+                    <p style="font-size: 16px;">모호하면 AI도 모호하게 답합니다.<br>한꺼번에 너무 많으면 품질이 떨어집니다.</p>
+                </div>
+            </div>
+
+            <!-- 오른쪽: 좋은 프롬프트 -->
+            <div>
+                <div class="vs-side after" style="margin-bottom: 16px;">
+                    <div class="vs-side-title" style="color: var(--primary);">이렇게 하세요</div>
+                </div>
+                <pre style="margin-bottom: 12px;"><code><span class="comment"># 구체적인 요청</span>
+"매물접수 힐스테이트영통 전세 5.8억"
+
+<span class="comment"># 맥락 + 기준 포함</span>
+"블로그 써줘. 주제: AI 자동화.
+ 대상: 50대 초보. 2000자. 친근한 톤."
+
+<span class="comment"># 단계별 요청</span>
+"먼저 설계부터 해줘.
+ plan.md 보여주고, 내가 승인하면 실행."</code></pre>
+                <div class="tip-box" style="margin: 0;">
+                    <p style="font-size: 16px;"><strong>구체적</strong> + <strong>맥락 포함</strong> + <strong>단계별</strong><br>이 3가지만 지키면 결과가 확 달라집니다.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <span class="chapter-indicator">CH6 · 부록</span>
+    <span class="slide-number">41</span>
+</div>
+
+<!-- 슬라이드 42: 프로젝트 폴더 세팅 — 처음 시작 -->
+<!-- mkdir부터 CLAUDE.md 생성까지 순서대로 -->
+<div id="slide-42" class="slide density-c">
+    <h2 class="slide-title">프로젝트 폴더 세팅 — 처음 시작</h2>
+    <div class="slide-body">
+        <p style="font-size: 20px; margin-bottom: 16px;">
+            새 프로젝트를 시작할 때, 아래 순서대로 따라하면 됩니다.
+        </p>
+
+        <!-- 단계별 리스트 -->
+        <ol class="numbered-list" style="margin-bottom: 20px;">
+            <li>
+                <strong>프로젝트 폴더 만들기</strong><br>
+                <code>mkdir ~/Desktop/my-project</code><br>
+                <span style="color: var(--text-light); font-size: 17px;">바탕화면에 프로젝트 폴더 생성</span>
+            </li>
+            <li>
+                <strong>Claude 설정 폴더 만들기</strong><br>
+                <code>mkdir -p ~/.claude/skills ~/.claude/commands ~/.claude/agents</code><br>
+                <span style="color: var(--text-light); font-size: 17px;">스킬, 명령어, 에이전트 폴더 한 번에 생성</span>
+            </li>
+            <li>
+                <strong>CLAUDE.md 생성하기</strong><br>
+                <span style="color: var(--text-light); font-size: 17px;">Claude Code에게 "CLAUDE.md 만들어줘"라고 말하면 됩니다</span>
+            </li>
+            <li>
+                <strong>첫 스킬 파일 생성하기</strong><br>
+                <span style="color: var(--text-light); font-size: 17px;">CH3에서 배운 대로, skills/ 폴더에 .md 파일 생성</span>
+            </li>
+            <li>
+                <strong>"설계부터 해줘" 로 시작!</strong><br>
+                <span style="color: var(--text-light); font-size: 17px;">플랜 모드로 시작 → 승인 → 실행의 안전한 루틴</span>
+            </li>
+        </ol>
+
+        <div class="warning-box">
+            <div class="box-title">처음에 이것만 기억하세요</div>
+            <p>완벽하게 세팅할 필요 없습니다. <strong>CLAUDE.md 하나만 있어도</strong> 시작할 수 있습니다.<br>
+            나머지는 사용하면서 하나씩 추가하면 됩니다.</p>
+        </div>
+    </div>
+    <span class="chapter-indicator">CH6 · 부록</span>
+    <span class="slide-number">42</span>
+</div>
+
+<!-- 슬라이드 43: CLAUDE.md 구성 가이드 -->
+<!-- 필수 섹션 4가지를 2단 레이아웃으로 설명 -->
+<div id="slide-43" class="slide density-d">
+    <h2 class="slide-title">CLAUDE.md 구성 가이드</h2>
+    <div class="slide-body">
+        <p style="margin-bottom: 16px; font-size: 19px;">
+            CLAUDE.md에 꼭 들어가야 할 <span class="highlight">4가지 필수 섹션</span>입니다.
+        </p>
+
+        <!-- 2단 레이아웃 -->
+        <div class="two-column">
+            <!-- 왼쪽: 코드 블록 -->
+            <div>
+                <pre><code><span class="comment"># CLAUDE.md — 필수 섹션 4가지</span>
+
+<span class="highlight-line">## 1. Hard Rules (절대 규칙)</span>
+- plan.md 승인 전 코드 작성 금지
+- API 키 하드코딩 금지
+- 한국어 주석 필수
+- 작업 완료 후 노션 보고서 업로드
+
+<span class="highlight-line">## 2. Design Standard (디자인 기준)</span>
+- "내가 돈 주고 사겠는가?" 기준
+- 텍스트만 나열하면 재작업
+- 50대 이상 사용자 기준 가독성
+
+<span class="highlight-line">## 3. Security (보안 규칙)</span>
+- API 키는 반드시 .env 파일 사용
+- 민감 정보 GitHub 커밋 금지
+- 키 변경 시 즉시 보고
+
+<span class="highlight-line">## 4. Agent Modes (모드 설정)</span>
+- "설계" → /architect 모드 전환
+- "검토" → /critic 모드 전환
+- "QA" → 자체 품질 검증 실행</code></pre>
+            </div>
+
+            <!-- 오른쪽: 각 섹션 중요도 설명 -->
+            <div>
+                <div class="icon-card" style="margin-bottom: 12px; border-left: 4px solid #EF4444;">
+                    <div class="card-content">
+                        <h4>Hard Rules</h4>
+                        <p>"이건 무조건 지켜라"<br>
+                        가장 중요합니다. 이것부터 쓰세요.<br>
+                        <span style="color: #EF4444; font-weight: 600;">예: 승인 없이 실행 금지</span></p>
+                    </div>
+                </div>
+                <div class="icon-card" style="margin-bottom: 12px; border-left: 4px solid var(--primary);">
+                    <div class="card-content">
+                        <h4>Design Standard</h4>
+                        <p>"이 수준 이하면 다시 해라"<br>
+                        결과물 품질의 최소 기준선입니다.<br>
+                        <span style="color: var(--primary); font-weight: 600;">예: 구매자 시각 기준 평가</span></p>
+                    </div>
+                </div>
+                <div class="icon-card" style="margin-bottom: 12px; border-left: 4px solid var(--accent);">
+                    <div class="card-content">
+                        <h4>Security</h4>
+                        <p>"비밀은 지켜라"<br>
+                        API 키, 비밀번호 유출 방지 규칙입니다.<br>
+                        <span style="color: var(--accent-warm); font-weight: 600;">예: .env 파일로 키 관리</span></p>
+                    </div>
+                </div>
+                <div class="icon-card" style="border-left: 4px solid var(--secondary);">
+                    <div class="card-content">
+                        <h4>Agent Modes</h4>
+                        <p>"이 말 하면 이 모드로 전환해라"<br>
+                        키워드별 동작 모드를 지정합니다.<br>
+                        <span style="color: var(--secondary); font-weight: 600;">예: "설계" → plan.md 작성</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <span class="chapter-indicator">CH6 · 부록</span>
+    <span class="slide-number">43</span>
+</div>
+
+<!-- 슬라이드 44: 항상 플랜 모드에서 시작 -->
+<!-- 9-Phase 워크플로우 요약을 수평 플로우로 -->
+<div id="slide-44" class="slide density-b">
+    <h2 class="slide-title">항상 플랜 모드에서 시작</h2>
+    <div class="slide-body">
+        <div class="slide-text">
+            <p style="font-size: 22px; margin-bottom: 20px;">
+                이 전자책을 만든 <span class="highlight">실제 워크플로우</span>입니다. 9단계 파이프라인으로 진행했습니다.
+            </p>
+
+            <!-- 9-Phase 플로우: 2줄로 나눔 -->
+            <div class="flow-horizontal" style="justify-content: center; margin-bottom: 12px;">
+                <div class="flow-step active" style="min-width: 120px; padding: 12px 16px;">
+                    <div class="step-label" style="font-size: 13px;">1. SCAFFOLD</div>
+                    <p style="font-size: 11px; margin-top: 2px;">뼈대 구조</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step gold" style="min-width: 120px; padding: 12px 16px;">
+                    <div class="step-label" style="font-size: 13px;">2. PLAN</div>
+                    <p style="font-size: 11px; margin-top: 2px;">설계 + 승인</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step active" style="min-width: 120px; padding: 12px 16px;">
+                    <div class="step-label" style="font-size: 13px;">3. WRITE</div>
+                    <p style="font-size: 11px; margin-top: 2px;">콘텐츠 작성</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step" style="min-width: 120px; padding: 12px 16px;">
+                    <div class="step-label" style="font-size: 13px;">4. OVERFLOW</div>
+                    <p style="font-size: 11px; margin-top: 2px;">넘침 검사</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step" style="min-width: 120px; padding: 12px 16px; border-color: #EF4444;">
+                    <div class="step-label" style="font-size: 13px;">5. FIX</div>
+                    <p style="font-size: 11px; margin-top: 2px;">오류 수정</p>
+                </div>
+            </div>
+            <div class="flow-horizontal" style="justify-content: center; margin-bottom: 20px;">
+                <div class="flow-step" style="min-width: 120px; padding: 12px 16px;">
+                    <div class="step-label" style="font-size: 13px;">6. RE-GATE</div>
+                    <p style="font-size: 11px; margin-top: 2px;">재검증</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step" style="min-width: 120px; padding: 12px 16px;">
+                    <div class="step-label" style="font-size: 13px;">7. VISUAL QA</div>
+                    <p style="font-size: 11px; margin-top: 2px;">시각 검수</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step active" style="min-width: 120px; padding: 12px 16px;">
+                    <div class="step-label" style="font-size: 13px;">8. DEPLOY</div>
+                    <p style="font-size: 11px; margin-top: 2px;">배포</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step gold" style="min-width: 120px; padding: 12px 16px;">
+                    <div class="step-label" style="font-size: 13px;">9. NOTION</div>
+                    <p style="font-size: 11px; margin-top: 2px;">보고서 업로드</p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <div class="box-title">핵심 포인트: 2단계(PLAN)에서 반드시 멈추세요</div>
+                <p>AI가 plan.md를 보여주면, 꼼꼼히 읽고 <strong>"승인"</strong>이라고 말하세요.<br>
+                이 한 단계가 뒤에서 발생할 수 있는 수많은 수정을 미리 방지합니다.<br>
+                <span class="highlight">계획 5분 투자 = 수정 2시간 절약</span></p>
+            </div>
+        </div>
+    </div>
+    <span class="chapter-indicator">CH6 · 부록</span>
+    <span class="slide-number">44</span>
+</div>
+
+<!-- 슬라이드 45: 마무리 + CTA -->
+<!-- bg-teal 배경으로 마무리 메시지와 유튜브 구독 CTA -->
+<div id="slide-45" class="slide density-a bg-teal">
+    <h2 class="slide-title" style="font-family: var(--font-serif); font-size: 52px; font-weight: 900; margin-bottom: 32px;">
+        다음 스킬은<br>여러분이 만드세요
+    </h2>
+    <p class="slide-subtitle" style="font-size: 24px; opacity: 0.9; max-width: 800px; line-height: 1.6; margin-bottom: 40px;">
+        이 책에서 배운 것을 정리하면 딱 3가지입니다.<br><br>
+        <strong>1.</strong> 스킬은 AI에게 가르친 업무 절차입니다.<br>
+        <strong>2.</strong> 한 번 만들면 계속 진화합니다.<br>
+        <strong>3.</strong> 여러분은 방향만 지시하면 됩니다.
+    </p>
+
+    <!-- CTA 배지 -->
+    <div class="cover-badge" style="margin-bottom: 20px;">
+        노모어매뉴얼 유튜브 구독하기
+    </div>
+    <p style="font-size: 18px; opacity: 0.7;">
+        더 많은 스킬 사례와 튜토리얼이 업로드됩니다.
+    </p>
+
+    <p class="cover-author" style="margin-top: 48px; font-size: 18px; opacity: 0.6;">
+        노모어매뉴얼 | 2026 | AI에게 업무를 가르치는 법
+    </p>
+    <span class="chapter-indicator" style="color: rgba(255,255,255,0.5);">CH6 · 마무리</span>
+    <span class="slide-number" style="color: rgba(255,255,255,0.5);">45</span>
+</div>
+
+
+        <!-- CH3~CH6 인라인 병합 완료 -->
+    </div>
+
+    <!-- 네비게이션 JS -->
+    <script src="js/navigation.js"></script>
+</body>
+</html>
